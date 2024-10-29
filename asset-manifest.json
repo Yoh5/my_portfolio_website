@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/my_portfolio_website/static/css/main.dbc12dc1.css",
+    "main.js": "/my_portfolio_website/static/js/main.479de477.js",
+    "static/js/453.81008908.chunk.js": "/my_portfolio_website/static/js/453.81008908.chunk.js",
+    "static/media/ship.jpeg": "/my_portfolio_website/static/media/ship.b5226d0f1fd4c8bc9185.jpeg",
+    "static/media/Kubernetes.png": "/my_portfolio_website/static/media/Kubernetes.5f2d2c7229cc64ce5ee9.png",
+    "static/media/Rtype.jpg": "/my_portfolio_website/static/media/Rtype.24e3b59402946ede26b7.jpg",
+    "static/media/webdev.svg": "/my_portfolio_website/static/media/webdev.4d72dbba32efee3890cef9bcacce7aa7.svg",
+    "static/media/DevOps.avif": "/my_portfolio_website/static/media/DevOps.8e2fa9277b352917bb3e.avif",
+    "static/media/cloudBg.png": "/my_portfolio_website/static/media/cloudBg.f28b5c6961fd82be839c.png",
+    "static/media/cloudDark.png": "/my_portfolio_website/static/media/cloudDark.51edaa54cabe7b964ae9.png",
+    "static/media/trade.jpg": "/my_portfolio_website/static/media/trade.2b3771c93e06b70b5c54.jpg",
+    "static/media/area.jpeg": "/my_portfolio_website/static/media/area.984ebfe032202f46f3af.jpeg",
+    "index.html": "/my_portfolio_website/index.html",
+    "main.dbc12dc1.css.map": "/my_portfolio_website/static/css/main.dbc12dc1.css.map",
+    "main.479de477.js.map": "/my_portfolio_website/static/js/main.479de477.js.map",
+    "453.81008908.chunk.js.map": "/my_portfolio_website/static/js/453.81008908.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbc12dc1.css",
+    "static/js/main.479de477.js"
+  ]
+}
