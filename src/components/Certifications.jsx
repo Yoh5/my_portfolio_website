@@ -6,7 +6,7 @@ const certifications = [
     provider: "Amazon Web Services",
     year: "2026",
     color: "#FF9900", // Couleur officielle AWS Orange
-    image: "/my_portfolio_website/images/aws_badge.jpg  ", // Chemin vers votre image uploadée
+    image: "/my_portfolio_website/images/aws_badge.jpg", // Chemin vers votre image uploadée
     note: "Lab Projects Graduate"
   },
   {
