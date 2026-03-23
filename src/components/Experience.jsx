@@ -17,7 +17,7 @@ const experiences = [
     ],
     tags: ["PHP", "SQL", "Réseau", "Support", "Bancaire"],
     // Option 1: Logo de l'entreprise
-    logo: "../../public/new_ora.png",
+    logo: "/my_portfolio_website/public/images/new_ora.png",
     // Option 2: Couleur de l'entreprise si pas de logo
     companyColor: "#10b981",
     // Option 3: Icône fallback
@@ -37,7 +37,7 @@ const experiences = [
       "CI/CD, tests, déploiement et support production"
     ],
     tags: ["Laravel", "PHP", "MySQL", "API REST", "Auth"],
-    logo: "../../public/new_biris.png",
+    logo: "/my_portfolio_website/public/images/new_biris.png",
     companyColor: "#0047AB",
     icon: "💻"
   }
