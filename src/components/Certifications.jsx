@@ -6,7 +6,7 @@ const certifications = [
     provider: "Amazon Web Services",
     year: "2026",
     color: "#FF9900", // Couleur officielle AWS Orange
-    image: "/my_portfolio_website/public/images/aws_badge.jpg  ", // Chemin vers votre image uploadée
+    image: "/my_portfolio_website/images/aws_badge.jpg  ", // Chemin vers votre image uploadée
     note: "Lab Projects Graduate"
   },
   {
@@ -15,14 +15,14 @@ const certifications = [
     year: "2025",
     color: "#f80000", // Couleur Oracle
     // Décommente pour ajouter une image :
-    image: "/my_portfolio_website/public/images/coursera_1.jpg"
+    image: "/my_portfolio_website/images/coursera_1.jpg"
   },
   {
     name: "Gestion de Projet",
     provider: "Coursera",
     year: "2025",
     color: "#0056d2", // Couleur Coursera
-    image: "/my_portfolio_website/public/images/coursera_2.jpg"
+    image: "/my_portfolio_website/images/coursera_2.jpg"
   },
   {
     name: "TOEFL",
@@ -30,7 +30,7 @@ const certifications = [
     year: "2025",
     score: "71/120",
     color: "#d92424", // Couleur TOEFL
-    image: "/my_portfolio_website/public/images/toefl_logo.jpg"
+    image: "/my_portfolio_website/images/toefl_logo.jpg"
   },
 ];
 

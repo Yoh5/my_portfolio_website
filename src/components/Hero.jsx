@@ -34,7 +34,7 @@ const Hero = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/my_portfolio_website/public/images/CV_pro_Axel.pdf';
+    link.href = '/my_portfolio_website/images/CV_pro_Axel.pdf';
     link.download = 'CV_Axel_AHO.pdf';
     document.body.appendChild(link);
     link.click();

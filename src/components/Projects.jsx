@@ -9,7 +9,7 @@ const Projects = () => {
       tech: ["Python", "FastAPI", "OpenAI API", "Pandas", "React", "TypeScript"],
       github: "https://github.com/Yoh5/intelligent_data_cleaner", // ← Mets ton vrai lien ici
       demo: null,
-      image: "/my_portfolio_website/public/images/data_cleaner.png", // ← Ou null si tu n'as pas d'image encore
+      image: "/my_portfolio_website/images/data_cleaner.png", // ← Ou null si tu n'as pas d'image encore
       color: "linear-gradient(135deg, #00d2ff, #3a7bd5)" // Bleu data/cyan évoquant la propreté
     },
     // DEVOPS / CLOUD
@@ -19,7 +19,7 @@ const Projects = () => {
       tech: ["AWS EC2", "SSH", "Security Groups", "Linux"],
       github: "https://github.com/Axl-Projects/Roadmap_sh/tree/main/EC2_Instance",
       demo: null,
-      image: "/my_portfolio_website/public/images/aws_ec2.png",
+      image: "/my_portfolio_website/images/aws_ec2.png",
       color: "linear-gradient(135deg, #ff9900, #ff6600)"
     },
     {
@@ -28,7 +28,7 @@ const Projects = () => {
       tech: ["Nginx", "Bash", "Log Analysis", "Awk"],
       github: "https://github.com/Axl-Projects/Roadmap_sh/tree/main/Nginx_Log_Analyzer",
       demo: null,
-      image: "/my_portfolio_website/public/images/nginx.jpg",
+      image: "/my_portfolio_website/images/nginx.jpg",
       color: "linear-gradient(135deg, #009639, #00b336)"
     },
     {
@@ -37,7 +37,7 @@ const Projects = () => {
       tech: ["Linux", "Bash", "Monitoring", "Stats"],
       github: "https://github.com/Axl-Projects/Roadmap_sh/tree/main/Server_Performance_Stats",
       demo: null,
-      image: "/my_portfolio_website/public/images/server.png",
+      image: "/my_portfolio_website/images/server.png",
       color: "linear-gradient(135deg, #667eea, #764ba2)"
     },
     // ML PROJECTS
@@ -47,7 +47,7 @@ const Projects = () => {
       tech: ["Python", "Decision Tree", "Pandas", "Scikit-learn"],
       github: "https://github.com/Axl-Projects/ML/tree/main/DecisionTree",
       demo: null,
-      image: "/my_portfolio_website/public/images/titanic.jpg",
+      image: "/my_portfolio_website/images/titanic.jpg",
       color: "linear-gradient(135deg, #56ab2f, #a8e063)"
     },
     {
@@ -56,7 +56,7 @@ const Projects = () => {
       tech: ["Python", "KNN", "Scikit-learn", "NumPy"],
       github: "https://github.com/Axl-Projects/ML/tree/main/KNN",
       demo: null,
-      image: "/my_portfolio_website/public/images/breast.jpg",
+      image: "/my_portfolio_website/images/breast.jpg",
       color: "linear-gradient(135deg, #a29bfe, #6c5ce7)"
     },
     {
@@ -65,7 +65,7 @@ const Projects = () => {
       tech: ["Python", "Logistic Regression", "StandardScaler"],
       github: "https://github.com/Axl-Projects/ML/tree/main/RegressionLogistique",
       demo: null,
-      image: "/my_portfolio_website/public/images/diabetes.jpg",
+      image: "/my_portfolio_website/images/diabetes.jpg",
       color: "linear-gradient(135deg, #4ecdc4, #44a3aa)"
     },
     // BACKEND PROJECTS
@@ -75,7 +75,7 @@ const Projects = () => {
       tech: ["Laravel", "PHP", "MySQL", "API REST"],
       github: "https://github.com/Yoh5/Shippackage",
       demo: null,
-      image: "/my_portfolio_website/public/images/ship.jpeg",
+      image: "/my_portfolio_website/images/ship.jpeg",
       color: "linear-gradient(135deg, #fd79a8, #e84393)"
     },
     {
@@ -84,7 +84,7 @@ const Projects = () => {
       tech: ["React", "Node.js", "OAuth", "Automation"],
       github: "https://github.com/Yoh5/Area_project",
       demo: null,
-      image: "/my_portfolio_website/public/images/area.jpeg",
+      image: "/my_portfolio_website/images/area.jpeg",
       color: "linear-gradient(135deg, #00b894, #00cec9)"
     },
     {
@@ -93,7 +93,7 @@ const Projects = () => {
       tech: ["C++", "SFML", "Network", "Game Engine"],
       github: "https://github.com/Yoh5/Rtype_project",
       demo: null,
-      image: "/my_portfolio_website/public/images/Rtype.jpg",
+      image: "/my_portfolio_website/images/Rtype.jpg",
       color: "linear-gradient(135deg, #e74c3c, #c0392b)"
     }
   ];
