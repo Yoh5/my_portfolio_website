@@ -37,7 +37,7 @@ const Projects = () => {
       tech: ["Linux", "Bash", "Monitoring", "Stats"],
       github: "https://github.com/Axl-Projects/Roadmap_sh/tree/main/Server_Performance_Stats",
       demo: null,
-      image: "/my_portfolio_website/images/server.png",
+      image: "/my_portfolio_website/images/serve.png",
       color: "linear-gradient(135deg, #667eea, #764ba2)"
     },
     // ML PROJECTS
@@ -119,11 +119,11 @@ const Projects = () => {
                     className="project-bg-image"
                   />
                   <div className="project-image-overlay">
-                    <span className="project-icon-overlay">🔗</span>
+                    <span className="project-icon-overlay"></span>
                   </div>
                 </>
               ) : (
-                <span className="project-icon-fallback">💻</span>
+                <span className="project-icon-fallback"></span>
               )}
             </div>
             
