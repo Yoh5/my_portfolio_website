@@ -9,7 +9,7 @@ const Projects = () => {
       tech: ["Python", "FastAPI", "OpenAI API", "Pandas", "React", "TypeScript"],
       github: "https://github.com/Yoh5/intelligent_data_cleaner", // ← Mets ton vrai lien ici
       demo: null,
-      image: "/my_portfolio_website/images/data_cleaner.png", // ← Ou null si tu n'as pas d'image encore
+      image: "/my_portfolio_website/images/Airobo.jpg", // ← Ou null si tu n'as pas d'image encore
       color: "linear-gradient(135deg, #00d2ff, #3a7bd5)" // Bleu data/cyan évoquant la propreté
     },
     // DEVOPS / CLOUD
