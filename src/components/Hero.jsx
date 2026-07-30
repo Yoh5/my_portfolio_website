@@ -7,10 +7,10 @@ const Hero = () => {
   
   // Les rôles qui vont défiler (inspiré de l'animation typewriter)
   const roles = [
-    "AI & Data Engineer",
-    "Cloud Architect", 
-    "DevOps Enthusiast",
-    "Full Stack Developer"
+    "AI / Agent Engineer",
+    "LLM & Automation Engineer",
+    "Cloud & Backend Developer",
+    "AI & Data Engineer"
   ];
 
   useEffect(() => {
@@ -61,9 +61,9 @@ const Hero = () => {
         </div>
 
         <p>
-          Ingénieur IA & Data en formation. Je combine <strong>Machine Learning</strong>, 
-          <strong> Cloud Computing</strong> et <strong>DevOps</strong> pour construire 
-          des solutions intelligentes et scalables.
+          Ingénieur IA & Data en formation. Je construis des <strong>agents LLM en production</strong> —
+          qui planifient, utilisent des outils, mémorisent et s'auto-corrigent — et
+          l'<strong>automatisation</strong> et le <strong>cloud</strong> pour les faire tourner.
         </p>
 
         <div className="hero-buttons">

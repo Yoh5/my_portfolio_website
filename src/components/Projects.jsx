@@ -2,15 +2,33 @@ import React from "react";
 
 const Projects = () => {
   const projects = [
-    // DATA ENGINEERING / AI
+    // ── AGENTS IA (projets phares) ──────────────────────────────
+    {
+      title: "Holokia Interview Agent",
+      description: "Agent IA d'entretien RH autonome (WhatsApp + web), déployé en production. 6 boucles de raisonnement (planification, auto-critique, mémoire candidat, sélection d'action, apprentissage du feedback), questions ancrées sur la fiche de poste + le CV, notation 4 axes + indice anti-triche, rapport PDF. Étude de cas (code client privé).",
+      tech: ["Python", "FastAPI", "LangGraph", "OpenAI/Groq", "Supabase", "Docker"],
+      github: "https://github.com/Yoh5", // ← Remplace par le repo case study une fois créé
+      demo: null,
+      image: null,
+      color: "linear-gradient(135deg, #7b2ff7, #f107a3)"
+    },
+    {
+      title: "Tech Watch Agent",
+      description: "Agent de veille autonome : le LLM juge quels articles comptent, va chercher lui-même le texte complet des plus importants (fetch anti-SSRF), synthétise les tendances, mémorise dans le temps (section Évolution) et apprend des retours 👍/👎 du lecteur. Fail-open partout, 80 tests.",
+      tech: ["Python", "FastAPI", "OpenAI/Anthropic", "APScheduler", "Agents"],
+      github: "https://github.com/Yoh5/agent_veille_tech",
+      demo: null,
+      image: null,
+      color: "linear-gradient(135deg, #11998e, #38ef7d)"
+    },
     {
       title: "Intelligent Data Cleaner",
-      description: "Plateforme intelligente d'analyse et nettoyage de données CSV/Excel. Détection automatique des valeurs manquantes (même espaces cachés), inférence de types, génération de scripts Python validés via AST et suggestions par LLM OpenAI.",
-      tech: ["Python", "FastAPI", "OpenAI API", "Pandas", "React", "TypeScript"],
-      github: "https://github.com/Yoh5/intelligent_data_cleaner", // ← Mets ton vrai lien ici
+      description: "Nettoyage de données CSV/Excel piloté par un conseiller LLM agentique : profilage automatique, puis le LLM raisonne sur les données réelles pour choisir ET justifier la meilleure stratégie par problème (repli rule-based automatique). Génère un script Python autonome validé par AST.",
+      tech: ["Python", "FastAPI", "OpenAI", "Pandas", "Next.js", "React"],
+      github: "https://github.com/Yoh5/intelligent_data_cleaner",
       demo: null,
-      image: "/my_portfolio_website/images/Airobo.jpg", // ← Ou null si tu n'as pas d'image encore
-      color: "linear-gradient(135deg, #00d2ff, #3a7bd5)" // Bleu data/cyan évoquant la propreté
+      image: "/my_portfolio_website/images/Airobo.jpg",
+      color: "linear-gradient(135deg, #00d2ff, #3a7bd5)"
     },
     // DEVOPS / CLOUD
     {
