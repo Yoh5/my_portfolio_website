@@ -30,6 +30,15 @@ const Projects = () => {
       image: "/my_portfolio_website/images/Airobo.jpg",
       color: "linear-gradient(135deg, #00d2ff, #3a7bd5)"
     },
+    {
+      title: "Career Match Agent",
+      description: "Agent qui compare un CV à une offre : score de fit (LLM + couverture de mots-clés ATS), suggestions d'amélioration du CV, puis génère un CV adapté et une lettre de motivation optimisés ATS — au choix en français ou en anglais, sans jamais rien inventer.",
+      tech: ["Python", "FastAPI", "OpenAI", "ATS", "Agents"],
+      github: "https://github.com/Yoh5/career_match_agent",
+      demo: null,
+      image: null,
+      color: "linear-gradient(135deg, #f5576c, #f093fb)"
+    },
     // DEVOPS / CLOUD
     {
       title: "AWS EC2 Deployment",
