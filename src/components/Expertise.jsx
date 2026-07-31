@@ -7,80 +7,80 @@ const Expertise = () => {
   const expertiseAreas = [
     {
       id: 1,
+      title: "AI Agents & LLM Engineering",
+      subtitle: "Agents LLM en production",
+      icon: "🤖",
+      color: "#7c3aed",
+      description: "Conception d'agents LLM qui planifient, utilisent des outils, mémorisent et s'auto-corrigent — de la conception à la mise en production (CI/CD), avec tests et fail-open.",
+      highlights: [
+        "Orchestration d'agents (LangGraph)",
+        "RAG & prompt engineering",
+        "OpenAI · Groq · Anthropic",
+        "Boucles agentiques : planning, mémoire, feedback",
+        "Tool-use, tests & robustesse (fail-open)"
+      ],
+      projects: [
+        "Holokia Interview Agent",
+        "Tech Watch Agent",
+        "Intelligent Data Cleaner"
+      ],
+      experience: "Production"
+    },
+    {
+      id: 2,
       title: "Backend Engineering",
       subtitle: "Architecture robuste & APIs",
       icon: "⚙️",
       color: "#3b82f6",
-      description: "Développement de systèmes backend scalables avec Laravel, Django et Node.js. Expérience en authentification sécurisée et gestion de bases de données.",
+      description: "Systèmes backend scalables avec FastAPI, Django, Node.js et Laravel. Authentification sécurisée, APIs REST et gestion de bases de données.",
       highlights: [
         "APIs REST sécurisées (JWT, OAuth)",
-        "Architecture MVC & Microservices",
-        "Bases de données SQL/NoSQL",
-        "Cache & optimisation performances"
+        "FastAPI · Django · Node.js · Laravel",
+        "Architecture MVC & microservices",
+        "PostgreSQL · Supabase · Redis · MySQL"
       ],
       projects: ["Auth API Laravel", "Shippackage", "Area"],
       experience: "2+ ans"
     },
     {
-      id: 2,
-      title: "Machine Learning & AI",
-      subtitle: "Supervisé, Non-supervisé & Régressions",
-      icon: "🧠",
-      color: "#8b5cf6",
-      description: "Maîtrise des algorithmes ML : régressions, classifications (KNN, Decision Trees, Logistique) et clustering (K-Means). De la théorie à la production.",
-      highlights: [
-        "Régressions : Linéaire, Multiple, Polynomiale",
-        "Classification : KNN, Decision Trees, Logistique",
-        "Clustering : K-Means avec PCA",
-        "Feature engineering & Évaluation"
-      ],
-      projects: [
-        "K-Means Customer Segmentation",
-        "Titanic Decision Tree", 
-        "Breast Cancer KNN",
-        "Diabetes Logistic Regression"
-      ],
-      experience: "6+ mois"
-    },
-    {
       id: 3,
       title: "Cloud & DevOps",
-      subtitle: "Infrastructure, Docker & Automatisation",
+      subtitle: "Infrastructure, Docker & CI/CD",
       icon: "☁️",
       color: "#10b981",
-      description: "Déploiement cloud AWS, conteneurisation Docker, et automatisation avec Ansible. Administration Linux, monitoring et CI/CD.",
+      description: "Conteneurisation Docker, CI/CD (GitHub Actions), déploiement cloud (AWS EC2, Render). Administration Linux, Nginx et monitoring.",
       highlights: [
-        "AWS EC2 & Déploiement cloud",
-        "Docker & Conteneurisation",
-        "Ansible & Configuration Management",
-        "Linux Administration & SSH",
-        "Nginx & Load Balancing",
-        "Monitoring & Log Analysis"
+        "Docker & conteneurisation",
+        "CI/CD (GitHub Actions) & déploiement continu",
+        "AWS EC2 · Render · Linux · SSH",
+        "Nginx & analyse de logs"
       ],
       projects: [
-        "Dockerized Service Deployment",
         "AWS EC2 Instance Setup",
-        "Ansible Configuration Management",
-        "Nginx Log Analyzer",
-        "Server Monitoring Dashboard"
+        "GitHub Actions Deployment",
+        "Nginx Log Analyzer"
       ],
       experience: "1+ an"
     },
     {
       id: 4,
-      title: "Data Engineering",
-      subtitle: "ETL & Analyse de données",
+      title: "Machine Learning & Data",
+      subtitle: "Fondations ML & pipelines de données",
       icon: "📊",
       color: "#f59e0b",
-      description: "Extraction, transformation et analyse de données. Scripts d'automatisation et reporting pour environnements bancaires.",
+      description: "Bases solides en ML (régression, classification, clustering) et en data engineering (ETL, SQL, reporting) — de la théorie aux pipelines.",
       highlights: [
-        "Scripts ETL (PHP, Python)",
-        "SQL avancé & Optimisation",
-        "Reporting & Dashboards",
-        "Oracle & PostgreSQL"
+        "Régression · classification · clustering",
+        "Python : scikit-learn, Pandas, NumPy",
+        "SQL avancé & optimisation",
+        "ETL & reporting (Orabank)"
       ],
-      projects: ["Bank Reporting System (Orabank)", "Data Pipeline Automation"],
-      experience: "6+ mois"
+      projects: [
+        "Intelligent Data Cleaner",
+        "Bank Reporting (Orabank)",
+        "ML : KNN · Decision Trees · K-Means"
+      ],
+      experience: "1+ an"
     }
   ];
 

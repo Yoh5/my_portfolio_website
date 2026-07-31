@@ -32,21 +32,21 @@ const About = () => {
 
           <div className="about-text-full">
             <p className="lead">
-              Je suis Axel, étudiant ingénieur en <strong>Intelligence Artificielle et Data</strong> à HESTIM Maroc. 
-              Passionné par les technologies de pointe, je développe des solutions orientées backend 
-              combinant data science et infrastructure cloud.
+              Je suis Axel, étudiant ingénieur en <strong>Intelligence Artificielle et Data</strong> à HESTIM Maroc.
+              Je conçois et déploie des <strong>agents LLM en production</strong> — des systèmes qui planifient,
+              utilisent des outils, mémorisent et s'auto-corrigent.
             </p>
 
             <p>
-              Mon parcours à <strong>EPITECH Bénin</strong> et mon expérience en entreprise (Orabank, Biris Technologie) 
-              m'ont permis de maîtriser le cycle complet de développement : de l'analyse des besoins 
-              au déploiement en production.
+              Mon parcours à <strong>EPITECH Bénin</strong> et mon expérience en entreprise (Holokia, Orabank, Biris Technologie)
+              m'ont permis de maîtriser le cycle complet : de la conception d'un agent
+              à son déploiement continu en production, avec une base backend et cloud solide.
             </p>
 
             <p>
-              Je suis particulièrement intéressé par le <strong>MLOps</strong>, l'automatisation CI/CD 
-              et l'architecture cloud scalable. Toujours curieux, je cherche continuellement à 
-              apprendre et à relever de nouveaux défis techniques.
+              Je m'intéresse particulièrement au <strong>développement d'agents IA</strong>, à l'automatisation
+              et au MLOps. Toujours curieux, je cherche continuellement à apprendre et à relever de
+              nouveaux défis techniques.
             </p>
           </div>
 
