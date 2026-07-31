@@ -2,6 +2,24 @@ import React from "react";
 
 const experiences = [
   {
+    id: 0,
+    role: "AI / Agent Engineer",
+    company: "Holokia",
+    type: "Stage",
+    period: "2025 - 2026",
+    location: "Remote",
+    description: [
+      "Agent IA d'entretien RH autonome (WhatsApp + web) déployé en production",
+      "6 boucles de raisonnement : planification, auto-critique, mémoire candidat, sélection d'action, apprentissage du feedback recruteur",
+      "Questions & notation ancrées sur la fiche de poste + le CV ; indice anti-triche + rapport PDF",
+      "Mise en production : FastAPI, LangGraph, OpenAI/Groq, Supabase, Docker, CI/CD (Render), auth API + proxies JWT"
+    ],
+    tags: ["Python", "FastAPI", "LangGraph", "OpenAI/Groq", "Supabase", "Docker"],
+    logo: null,
+    companyColor: "#7c3aed",
+    icon: "🤖"
+  },
+  {
     id: 1,
     role: "Développeur Logiciel & Support Technique",
     company: "Orabank Bénin",

@@ -4,6 +4,20 @@ import "../index.css";
 const Skills = () => {
   const skillsData = [
     {
+      title: "AI Agents & LLM",
+      icon: "🤖",
+      skills: [
+        { name: "LangGraph", icon: "fas fa-project-diagram" },
+        { name: "OpenAI", icon: "fas fa-robot" },
+        { name: "Groq", icon: "fas fa-bolt" },
+        { name: "Anthropic (Claude)", icon: "fas fa-comments" },
+        { name: "RAG", icon: "fas fa-search" },
+        { name: "Prompt Engineering", icon: "fas fa-magic" },
+        { name: "Agents & Tool-use", icon: "fas fa-cogs" },
+        { name: "FastAPI", icon: "devicon-fastapi-plain colored" }
+      ]
+    },
+    {
       title: "Langages de Programmation",
       icon: "💻",
       skills: [
@@ -18,7 +32,7 @@ const Skills = () => {
       ]
     },
     {
-      title: "AI / Machine Learning",
+      title: "Machine Learning & Data",
       icon: "🧠",
       skills: [
         { name: "Scikit-learn", icon: "devicon-scikitlearn-plain colored" },
@@ -26,24 +40,20 @@ const Skills = () => {
         { name: "NumPy", icon: "devicon-numpy-plain colored" },
         { name: "Matplotlib", icon: "devicon-matplotlib-plain colored" },
         { name: "TensorFlow", icon: "devicon-tensorflow-original colored" },
-        { name: "Régression Linéaire", icon: "fas fa-chart-line" },
-        { name: "Régression Polynomiale", icon: "fas fa-wave-square" },
-        { name: "Régression Logistique", icon: "fas fa-sigmoid" },
-        { name: "KNN Classifier", icon: "fas fa-project-diagram" },
-        { name: "K-Means Clustering", icon: "fas fa-braille" },
-        { name: "Decision Trees", icon: "fas fa-sitemap" },
-        { name: "PCA", icon: "fas fa-compress-arrows-alt" }
+        { name: "Régression / Classification", icon: "fas fa-chart-line" },
+        { name: "Clustering (K-Means, PCA)", icon: "fas fa-braille" }
       ]
     },
     {
       title: "Developement Backend",
       icon: "⚙️",
       skills: [
+        { name: "FastAPI", icon: "devicon-fastapi-plain colored" },
+        { name: "Django", icon: "devicon-django-plain colored" },
+        { name: "Flask", icon: "devicon-flask-original colored" },
         { name: "Node.js", icon: "devicon-nodejs-plain colored" },
         { name: "Express", icon: "devicon-express-original colored" },
         { name: "Laravel", icon: "devicon-laravel-plain colored" },
-        { name: "Flask", icon: "devicon-flask-original colored" },
-        { name: "Django", icon: "devicon-django-plain colored" },
         { name: "REST APIs", icon: "fas fa-plug" }
       ]
     },
