@@ -49,7 +49,7 @@ const Contact = () => {
               <span>💻</span> GitHub /Yoh5
             </a>
             <a 
-              href="https://linkedin.com/in/axel-aho" 
+              href="https://linkedin.com/in/axelaho"
               target="_blank" 
               rel="noopener noreferrer"
               className="contact-item"
