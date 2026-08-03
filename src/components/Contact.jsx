@@ -29,8 +29,9 @@ const Contact = () => {
         <div className="contact-info">
           <h3>Let's work together</h3>
           <p>
-            Je suis actuellement ouvert aux opportunités de stage, alternance 
-            et collaborations sur des projets Data/ML/Cloud. N'hésite pas à me contacter !
+            Je recherche un <strong>stage PFE en ingénierie IA</strong> — développement d'agents LLM,
+            automatisation, MLOps — et reste ouvert à l'alternance et aux collaborations.
+            N'hésite pas à me contacter !
           </p>
 
           <div className="contact-links">

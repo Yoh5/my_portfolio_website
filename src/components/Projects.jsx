@@ -23,7 +23,7 @@ const Projects = () => {
     },
     {
       title: "Intelligent Data Cleaner",
-      description: "Nettoyage de données CSV/Excel piloté par un conseiller LLM agentique : profilage automatique, puis le LLM raisonne sur les données réelles pour choisir ET justifier la meilleure stratégie par problème (repli rule-based automatique). Génère un script Python autonome validé par AST.",
+      description: "Agent de nettoyage de données CSV/Excel : il poursuit un objectif chiffré de qualité et itère — profile le jeu de données, laisse le LLM choisir et justifier la stratégie par problème, applique, re-profile, recommence, et garde la meilleure version. Repli rule-based automatique si le LLM échoue. Livre le fichier nettoyé et un script Python autonome validé par AST.",
       tech: ["Python", "FastAPI", "OpenAI", "Pandas", "Next.js", "React"],
       github: "https://github.com/Yoh5/intelligent_data_cleaner",
       demo: null,
@@ -32,8 +32,8 @@ const Projects = () => {
     },
     {
       title: "Career Match Agent",
-      description: "Agent qui compare un CV à une offre : score de fit (LLM + couverture de mots-clés ATS), suggestions d'amélioration du CV, puis génère un CV adapté et une lettre de motivation optimisés ATS — au choix en français ou en anglais, sans jamais rien inventer.",
-      tech: ["Python", "FastAPI", "OpenAI", "ATS", "Agents"],
+      description: "Agent de candidature de bout en bout : il source des offres de stage (APIs publiques Greenhouse/Lever/Ashby, flux RSS), les classe par pertinence, puis génère pour chacune un CV adapté (PDF mis en page) et une lettre (Word). Deux boucles agentiques à objectifs mesurables — couverture ATS et qualité rédactionnelle déterministe (langue, fautes, champs à trous) — avec vérification anti-invention. Il prépare, l'humain valide et envoie. 123 tests.",
+      tech: ["Python", "FastAPI", "OpenAI", "Agents", "ATS", "fpdf2"],
       github: "https://github.com/Yoh5/career_match_agent",
       demo: null,
       image: null,
