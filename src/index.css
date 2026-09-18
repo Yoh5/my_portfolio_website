@@ -1958,3 +1958,63 @@ body {
   }
 }
 
+
+/* ── Projets groupés ──────────────────────────────────────────────────────────
+   Une liste plate mettait un exercice scolaire à côté d'un agent en production.
+   Le groupe dit d'emblée ce qu'on regarde, et l'ordre des groupes dit ce qui
+   compte. */
+
+.project-group {
+  margin-bottom: 4.5rem;
+}
+.project-group-head {
+  max-width: 62ch;
+  margin: 0 auto 1.75rem;
+  text-align: center;
+}
+.project-group-head h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+.project-group-head p {
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Un projet en ligne le dit à côté du titre, là où l'œil est déjà, et pas
+   seulement dans un bouton en bas de carte. C'est ce qui décide du clic. */
+.project-live {
+  display: inline-block;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #059669;
+  background: rgba(5, 150, 105, 0.14);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+.project-private {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* --border vaut presque la couleur de la carte : une bordure dessinee avec
+   n'etait tout simplement pas visible, et le bouton passait pour du texte. */
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--text-muted);
+}
+.btn-secondary:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+  background: rgba(59, 130, 246, 0.08);
+}
