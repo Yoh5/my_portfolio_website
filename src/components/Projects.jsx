@@ -50,7 +50,7 @@ const GROUPS = [
       {
         title: "Career Match Agent",
         description:
-          "Agent de candidature de bout en bout : il source des offres de stage (APIs publiques Greenhouse, Lever, Ashby, et flux RSS), les classe par pertinence, puis génère pour chacune un CV adapté en PDF mis en page et une lettre en Word. Deux boucles à objectifs mesurables — couverture ATS et qualité rédactionnelle déterministe : mélange de langues, champs à trous, fautes — derrière une barrière anti-invention. Il prépare, l'humain valide et envoie. 123 tests.",
+          "Agent de candidature de bout en bout : il source des offres de stage (APIs publiques Greenhouse, Lever, Ashby, et flux RSS), les classe par pertinence, puis génère pour chacune un CV adapté en PDF mis en page et une lettre en Word. Deux boucles à objectifs mesurables — couverture ATS et qualité rédactionnelle déterministe : mélange de langues, champs à trous, fautes — derrière une barrière anti-invention. Le texte des offres vient de tiers : il est clôturé dans le prompt, son délimiteur de fermeture neutralisé, et la consigne placée après lui — parce qu'ici une injection réussie ne produit pas un résumé faux, elle produit un mensonge sur un CV signé. Il prépare, l'humain valide et envoie. 208 tests.",
         tech: ["Python", "FastAPI", "OpenAI", "ATS", "fpdf2"],
         github: "https://github.com/Yoh5/career_match_agent",
         demo: null,
@@ -60,7 +60,7 @@ const GROUPS = [
       {
         title: "Tech Watch Agent",
         description:
-          "Agent de veille autonome : le LLM juge quels articles comptent, va chercher lui-même le texte complet des plus importants (fetch anti-SSRF), synthétise les tendances, mémorise d'une exécution à l'autre et apprend des retours 👍/👎 du lecteur. Fail-open partout. 80 tests.",
+          "Agent de veille autonome : le LLM juge quels articles comptent, va chercher lui-même le texte complet des plus importants, synthétise les tendances, mémorise d'une exécution à l'autre et apprend de ce que le lecteur marque pertinent ou hors sujet. Le fetch refuse un hôte dont une seule adresse résolue est privée et revalide chaque redirection — et le README écrit ce que cette garde ne couvre pas, plutôt que de laisser croire à une garantie. Fail-open partout. 101 tests.",
         tech: ["Python", "FastAPI", "OpenAI/Anthropic", "APScheduler"],
         github: "https://github.com/Yoh5/agent_veille_tech",
         demo: null,
@@ -70,12 +70,22 @@ const GROUPS = [
       {
         title: "Intelligent Data Cleaner",
         description:
-          "Nettoyage de données agentique : il vise un score de qualité chiffré et itère — profilage, le LLM choisit et justifie une stratégie par problème, application, re-profilage, on garde la meilleure version. Repli rule-based si le LLM échoue. Livre le fichier nettoyé et un script Python autonome validé par AST. 16 tests.",
+          "Nettoyage de données agentique : il vise un score de qualité chiffré et itère — profilage, le LLM choisit et justifie une stratégie par problème, application, re-profilage, on garde la meilleure version. Repli rule-based si le LLM échoue. Livre le fichier nettoyé et un script Python autonome que l'on peut relire et rejouer sans l'application. Le script exécuté côté serveur ne reçoit plus l'environnement du serveur : il tournait avec la clé d'API, que trois lignes suffisaient à ressortir. 33 tests.",
         tech: ["Python", "FastAPI", "OpenAI", "Pandas", "Next.js", "React"],
         github: "https://github.com/Yoh5/intelligent_data_cleaner",
         demo: null,
         image: "/my_portfolio_website/images/Airobo.jpg",
         color: "linear-gradient(135deg, #00d2ff, #3a7bd5)"
+      },
+      {
+        title: "Glass Box",
+        description:
+          "L'enregistreur de vol d'un agent. Les outils d'observabilité tracent les appels au modèle : le prompt, la réponse, la latence. Le jour où un agent écrit dans un fichier qu'il n'aurait pas dû toucher, les trois questions qu'on pose vraiment n'ont pas de réponse — sur quelle information il s'appuyait, referait-il la même chose, et ce journal dit-il la vérité. Registre chaîné par hachage, pièces adressées par leur contenu, rejeu déterministe, et le chemin qui remonte d'une action jusqu'à l'octet qui l'a provoquée. Routage à étages sur Nemotron : deux échantillons du petit modèle, escalade si les réponses divergent. Dépôt privé pour l'instant.",
+        tech: ["Python", "Nebius Token Factory", "Nemotron", "Hash chain", "CLI"],
+        github: null,
+        demo: null,
+        image: null,
+        color: "linear-gradient(135deg, #2c3e50, #4ca1af)"
       },
       {
         title: "Tender Compliance Agent",
@@ -97,7 +107,7 @@ const GROUPS = [
       {
         title: "Runway",
         description:
-          "Un keeper qui décide quels flux de paiement Superfluid ralentir quand une trésorerie s'épuise, et exécute via KeeperHub sous un mandat on-chain borné : il peut ralentir un flux, jamais le rediriger. Prouvé sur Sepolia.",
+          "Finaliste du hackathon KeeperHub Agent Economy 2026. Un keeper qui décide quels flux de paiement Superfluid ralentir quand une trésorerie s'épuise, et exécute sous un mandat on-chain borné : la permission accordée autorise à ralentir un flux et à le fermer, jamais à en créer un ni à le rediriger. Chaque exécution laisse un enregistrement que `pnpm verify-record` rejoue depuis les faits enregistrés, et qui refuse de valider une écriture qu'aucune décision n'a nommée. Prouvé sur Sepolia. 302 tests.",
         tech: ["TypeScript", "Superfluid", "KeeperHub", "Solidity", "Sepolia"],
         github: "https://github.com/Yoh5/runway",
         demo: null,
