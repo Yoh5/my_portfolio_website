@@ -48,6 +48,26 @@ const GROUPS = [
         color: "linear-gradient(135deg, #7b2ff7, #f107a3)"
       },
       {
+        title: "Carbon Gate",
+        description:
+          "Un pipeline d'intégration continue qui chiffre son propre coût carbone, et qui refuse d'annoncer un gain qu'il ne peut pas prouver. Chaque résultat est un intervalle sous ISO/IEC 21031:2024 — l'énergie ne se mesure pas sur un runner partagé et les coefficients publiés varient d'un facteur trois — et la porte compte son propre coût dedans : quand l'intervalle contient zéro, le rapport l'écrit au lieu de publier un nombre. La mesure a retourné le projet : 93,0 % de l'empreinte d'un job CI est du matériel amorti, pas de l'électricité, donc décaler les calculs vers les heures propres agit sur les 7 % restants. Le correctif n'est pas étiqueté, il est généré : la porte émet un pipeline enfant ne contenant que les jobs que le changement exige. Deux règles que l'outil ne peut pas enfreindre — la justesse décide et le carbone mesure, et un gain indistinguable de zéro ne s'annonce pas. 191 tests ; merge requests revues par GitLab Duo Agent Platform.",
+        tech: ["Python 3.12", "GitLab CI", "GitLab Duo Agent Platform", "ISO/IEC 21031:2024", "pipelines parent-enfant"],
+        github: "https://github.com/Yoh5/carbon-gate",
+        demo: null,
+        image: null,
+        color: "linear-gradient(135deg, #c2742c, #3fb8a4)"
+      },
+      {
+        title: "Call First",
+        description:
+          "Protection contre l'arnaque au faux coursier, sur l'API Ring. Le résident l'allume et choisit qui est prévenu ; aucune reconnaissance de visage ; la famille est alertée quand la porte s'ouvre pour une visite qui n'était pas attendue. La décision est dans du code lisible, pas dans un modèle : 146 tests, et 32 règles cassées volontairement, chacune rattrapée par un test — parce qu'une règle qu'aucun test ne voit tomber n'est pas une règle.",
+        tech: ["Python", "API Ring", "FastAPI", "règles déterministes"],
+        github: "https://github.com/Yoh5/callfirst",
+        demo: "https://callfirst-bgtj.onrender.com/try",
+        image: null,
+        color: "linear-gradient(135deg, #e07856, #2c3e50)"
+      },
+      {
         title: "Career Match Agent",
         description:
           "Agent de candidature de bout en bout : il source des offres de stage (APIs publiques Greenhouse, Lever, Ashby, et flux RSS), les classe par pertinence, puis génère pour chacune un CV adapté en PDF mis en page et une lettre en Word. Deux boucles à objectifs mesurables — couverture ATS et qualité rédactionnelle déterministe : mélange de langues, champs à trous, fautes — derrière une barrière anti-invention. Le texte des offres vient de tiers : il est clôturé dans le prompt, son délimiteur de fermeture neutralisé, et la consigne placée après lui — parce qu'ici une injection réussie ne produit pas un résumé faux, elle produit un mensonge sur un CV signé. Il prépare, l'humain valide et envoie. 208 tests.",
