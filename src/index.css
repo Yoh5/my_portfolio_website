@@ -2239,3 +2239,75 @@ body {
 section[id] {
   scroll-margin-top: 5.5rem;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Cartes Expertise — 31/10/2026.
+   Les quatre couleurs décoratives sont parties (sept combinaisons sur huit
+   échouaient au contraste, et aucune ne signifiait rien) ; l'accent unique
+   les remplace. Les emoji sont devenus des SVG au trait, qui héritent de la
+   couleur courante et suivent donc le thème.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* `--accent-color` et `--dot-color` n'existent plus : les règles qui les
+   employaient tombaient sur une valeur vide et ne peignaient rien. On les
+   réécrit sur le jeton d'accent. */
+.expertise-card::before { background: var(--accent); }
+.expertise-card:hover { border-color: var(--accent); }
+
+.card-icon {
+  background: var(--accent-sourd);
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.card-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* La rotation de l'icône au survol disparaît : elle n'existait que pour
+   l'effet, et le survol ne touche ni le doigt ni le clavier. */
+.expertise-card:hover .card-icon { transform: none; }
+
+.expertise-card .subtitle { color: var(--accent); }
+
+.highlights li::before { background: var(--accent); }
+.expertise-card:hover .highlights li::before { box-shadow: none; }
+
+/* Les étiquettes de projet sont devenues des boutons : elles mènent à la
+   section Projets, où chacun des noms cités existe réellement. */
+.project-tag {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--accent-sourd);
+  color: var(--accent);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.project-tag:hover {
+  border-color: var(--accent);
+  transform: none;
+}
+
+/* Le bouton portait un dégradé et une ombre colorée calculés à partir de la
+   couleur de carte. Uni, comme le reste du site. */
+.explore-btn {
+  background: var(--accent) !important;
+  color: var(--bg-primary) !important;
+  box-shadow: none !important;
+}
+
+.explore-btn::before { display: none; }
+
+.expertise-card:focus-within {
+  border-color: var(--accent);
+}
+
+.project-tag:focus-visible,
+.explore-btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}

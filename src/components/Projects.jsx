@@ -116,11 +116,11 @@ const GROUPS = [
       {
         title: "Glass Box",
         resume:
-          "L'enregistreur de vol d'un agent : registre chaîné par hachage, pièces adressées par leur contenu, rejeu déterministe.",
+          "L'enregistreur de vol d'un agent : registre chaîné par hachage, pièces adressées par leur contenu, rejeu déterministe. 329 tests.",
         description:
-          "L'enregistreur de vol d'un agent. Les outils d'observabilité tracent les appels au modèle : le prompt, la réponse, la latence. Le jour où un agent écrit dans un fichier qu'il n'aurait pas dû toucher, les trois questions qu'on pose vraiment n'ont pas de réponse — sur quelle information il s'appuyait, referait-il la même chose, et ce journal dit-il la vérité. Registre chaîné par hachage, pièces adressées par leur contenu, rejeu déterministe, et le chemin qui remonte d'une action jusqu'à l'octet qui l'a provoquée. Routage à étages sur Nemotron : deux échantillons du petit modèle, escalade si les réponses divergent. Dépôt privé pour l'instant.",
+          "L'enregistreur de vol d'un agent. Les outils d'observabilité tracent les appels au modèle : le prompt, la réponse, la latence. Le jour où un agent écrit dans un fichier qu'il n'aurait pas dû toucher, les trois questions qu'on pose vraiment n'ont pas de réponse — sur quelle information il s'appuyait, referait-il la même chose, et ce journal dit-il la vérité. Registre chaîné par hachage, pièces adressées par leur contenu, rejeu déterministe, et le chemin qui remonte d'une action jusqu'à l'octet qui l'a provoquée. Routage à étages sur Nemotron : deux échantillons du petit modèle, escalade si les réponses divergent. 329 tests.",
         tech: ["Python", "Nebius Token Factory", "Nemotron", "Hash chain", "CLI"],
-        github: null,
+        github: "https://github.com/Yoh5/glassbox",
         demo: null,
         image: null,
         color: "linear-gradient(135deg, #2c3e50, #4ca1af)"
@@ -157,12 +157,12 @@ const GROUPS = [
         color: "linear-gradient(135deg, #0984e3, #00cec9)"
       },
       {
-        title: "Fail Closed",
+        title: "Correctifs acceptés en amont",
         resume:
-          "Trois pull requests fusionnées dans KeeperHub : un build effaçait deux fichiers suivis par git et sortait en vert.",
+          "Cinq contributions fusionnées chez KeeperHub et chez Nebius — dont un identifiant de modèle documenté en minuscules qui rendait 404.",
         description:
-          "Trois pull requests fusionnées dans KeeperHub : un script de build effaçait deux fichiers suivis par git et sortait en vert. Il échoue maintenant franchement. Petit, mais c'est le genre de bug qui coûte une après-midi à quelqu'un d'autre.",
-        tech: ["TypeScript", "CI", "Open source"],
+          "Trois pull requests fusionnées dans KeeperHub : un script de build effaçait deux fichiers suivis par git et sortait en vert ; il échoue maintenant franchement. Et deux contributions acceptées dans le dépôt de Nebius le 30 octobre 2026 : une correction de l'identifiant du modèle Nemotron, documenté en minuscules alors que l'API ne sert que la forme mixte — vérifié sur les deux points d'entrée, 200 contre 404 ; et une mesure sur l'API vivante montrant qu'une réponse de raisonnement tronquée rend son texte sous la clé `reasoning` et non `reasoning_content`, ce qui faisait lire une réponse vide aux clients portés depuis un autre fournisseur. Nebius en a tiré une section de documentation. Petit à chaque fois, et c'est le genre de bug qui coûte une après-midi à quelqu'un d'autre.",
+        tech: ["TypeScript", "Python", "CI", "Open source"],
         github: "https://github.com/Yoh5/fail-closed",
         demo: null,
         image: null,

@@ -10,8 +10,13 @@ import React from "react";
 // de ceux annoncés par les fiches projet (voir Projects.jsx), et chacun est
 // contrôlable dans son dépôt. Un chiffre invérifiable sur une page d'accueil
 // coûte plus qu'il ne rapporte.
+//
+// Il a changé une fois, le 31/10/2026, parce que Glass Box était donné pour
+// privé alors que son dépôt est public depuis la soumission Nebius : 329 tests
+// n'étaient comptés nulle part. Quand une fiche gagne ou perd un nombre, celui
+// d'ici se recompte — sinon la page se contredit à deux écrans d'intervalle.
 const PREUVES = [
-  { chiffre: "1 159", quoi: "tests sur 7 projets mesurés" },
+  { chiffre: "1 488", quoi: "tests sur 8 projets mesurés" },
   { chiffre: "2", quoi: "agents en production, utilisés chaque jour" },
   { chiffre: "Finaliste", quoi: "KeeperHub Agent Economy 2026" },
 ];
