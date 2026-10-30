@@ -1,83 +1,67 @@
-// Hero.jsx avec animation de texte rotatif
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+// Le héros portait une animation de titres de poste qui tournaient — « AI /
+// Agent Engineer », puis trois variantes. C'est le dispositif le plus templaté
+// du genre, et il n'apprend rien : un recruteur en déduit qu'on ne sait pas
+// comment se nommer. À sa place, la thèse qui traverse tous les projets, et
+// trois faits vérifiables.
+//
+// Les trois chiffres sont sourcés, pas estimés : le total de tests est la somme
+// de ceux annoncés par les fiches projet (voir Projects.jsx), et chacun est
+// contrôlable dans son dépôt. Un chiffre invérifiable sur une page d'accueil
+// coûte plus qu'il ne rapporte.
+const PREUVES = [
+  { chiffre: "1 159", quoi: "tests sur 7 projets mesurés" },
+  { chiffre: "2", quoi: "agents en production, utilisés chaque jour" },
+  { chiffre: "Finaliste", quoi: "KeeperHub Agent Economy 2026" },
+];
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  
-  // Les rôles qui vont défiler (inspiré de l'animation typewriter)
-  const roles = [
-    "AI / Agent Engineer",
-    "LLM & Automation Engineer",
-    "Cloud & Backend Developer",
-    "AI & Data Engineer"
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % roles.length);
-        setIsAnimating(false);
-      }, 300); // Temps de transition
-    }, 3000); // Change toutes les 3 secondes
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const allerA = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
-  const downloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/my_portfolio_website/images/CV_pro_Axel.pdf';
-    link.download = 'CV_Axel_AHO.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const telechargerCV = () => {
+    const lien = document.createElement("a");
+    lien.href = "/my_portfolio_website/images/CV_pro_Axel.pdf";
+    lien.download = "CV_Axel_AHO.pdf";
+    document.body.appendChild(lien);
+    lien.click();
+    document.body.removeChild(lien);
   };
 
   return (
     <section id="home" className="hero">
       <div className="hero-content">
-        <h1>Hi, I'm <span className="highlight">Axel AHO</span></h1>
-        
-        {/* Animation de texte rotatif */}
-        <div className="rotating-text-container">
-          <h2 className="static-text">I'm a </h2>
-          <div className="rotating-text-wrapper">
-            <span 
-              className={`rotating-text ${isAnimating ? 'slide-out' : 'slide-in'}`}
-              style={{ color: 'var(--accent)' }}
-            >
-              {roles[currentIndex]}
-            </span>
-            <span className="cursor">|</span>
-          </div>
-        </div>
+        <p className="hero-eyebrow">Axel AHO — Ingénieur IA &amp; agents</p>
 
-        <p>
-          Ingénieur IA & Data en formation. Je construis des <strong>agents LLM en production</strong> —
-          qui planifient, utilisent des outils, mémorisent et s'auto-corrigent — et
-          l'<strong>automatisation</strong> et le <strong>cloud</strong> pour les faire tourner.
+        <h1 className="hero-these">
+          Le modèle lit.<br />
+          <span className="highlight">Le code décide.</span>
+        </h1>
+
+        <p className="hero-sous">
+          Je construis des agents LLM qui tournent en production — et je mets la
+          décision dans du code testé plutôt que dans un prompt. Quand un agent
+          se trompe, ce qui l'arrête doit être relisible par un humain.
         </p>
 
+        <ul className="hero-preuves">
+          {PREUVES.map((p) => (
+            <li key={p.quoi}>
+              <strong>{p.chiffre}</strong>
+              <span>{p.quoi}</span>
+            </li>
+          ))}
+        </ul>
+
         <div className="hero-buttons">
-          <button 
-            className="btn btn-primary" 
-            onClick={() => scrollToSection("projects")}
-          >
-            Voir Projets →
+          <button className="btn btn-primary" onClick={() => allerA("projects")}>
+            Voir les projets →
           </button>
-          <button 
-            className="btn btn-secondary"
-            onClick={downloadCV}
-          >
-            Télécharger CV
+          <button className="btn btn-secondary" onClick={telechargerCV}>
+            Télécharger le CV
           </button>
         </div>
       </div>

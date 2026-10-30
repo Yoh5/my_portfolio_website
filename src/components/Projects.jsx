@@ -12,6 +12,8 @@ const GROUPS = [
     projects: [
       {
         title: "Probe",
+        resume:
+          "Chaque question est bâtie sur la réponse précédente. Quatre signaux de diction mesurés par du code, jamais par le modèle. 6 langues, 178 tests.",
         description:
           "Un entretien de présélection qu'on ne peut pas préparer. Une seule question est écrite d'avance ; toutes les suivantes sont construites à partir de ce que le candidat vient de dire. Après chaque réponse, du code mesure quatre signaux de diction — comparés au même candidat une minute plus tôt — et rend une instruction à l'intervieweur. Le modèle de langage ne voit jamais les chiffres et ne choisit jamais l'instruction : il choisit la formulation. Le rapport montre toute cette chaîne, vérifiable contre la transcription. Six langues, 178 tests.",
         tech: ["AssemblyAI Voice Agent", "Realtime STT", "Python", "FastAPI", "WebSocket", "Web Audio"],
@@ -22,6 +24,8 @@ const GROUPS = [
       },
       {
         title: "Unscripted",
+        resume:
+          "Repère qu'une réponse est lue plutôt que pensée. 89 % de justesse, une session laissée de côté à chaque fois.",
         description:
           "La mesure qui est derrière Probe, seule : un entretien oral qui remarque qu'une réponse sonne lue plutôt que pensée sur le moment. Quatre signaux — vocabulaire proche de l'écrit, hésitations, propositions à rallonge, enchaînements sans pause — chacun relatif à l'échauffement du locuteur lui-même. 89 % de justesse en laissant une session de côté à chaque fois, sur 20 réponses annotées d'un seul locuteur : et le rapport l'écrit sur chaque page.",
         tech: ["Speechmatics", "Python", "FastAPI", "scikit-learn", "Web Audio"],
@@ -39,6 +43,8 @@ const GROUPS = [
     projects: [
       {
         title: "Holokia Interview Agent",
+        resume:
+          "Agent d'entretien RH en production, utilisé chaque jour par des recruteurs. Six boucles de raisonnement.",
         description:
           "Agent IA d'entretien RH autonome (WhatsApp + web), déployé en production et utilisé quotidiennement par des recruteurs. Six boucles de raisonnement — planification, auto-critique, mémoire candidat, sélection d'action, apprentissage du feedback — questions ancrées sur la fiche de poste et le CV, notation sur quatre axes, indice anti-triche, rapport PDF. Code client privé : architecture présentable sur demande.",
         tech: ["Python", "FastAPI", "LangGraph", "OpenAI/Groq", "Supabase", "Docker"],
@@ -49,6 +55,8 @@ const GROUPS = [
       },
       {
         title: "Carbon Gate",
+        resume:
+          "Une CI qui chiffre son propre carbone et refuse d'annoncer un gain qu'elle ne peut pas prouver. 191 tests.",
         description:
           "Un pipeline d'intégration continue qui chiffre son propre coût carbone, et qui refuse d'annoncer un gain qu'il ne peut pas prouver. Chaque résultat est un intervalle sous ISO/IEC 21031:2024 — l'énergie ne se mesure pas sur un runner partagé et les coefficients publiés varient d'un facteur trois — et la porte compte son propre coût dedans : quand l'intervalle contient zéro, le rapport l'écrit au lieu de publier un nombre. La mesure a retourné le projet : 93,0 % de l'empreinte d'un job CI est du matériel amorti, pas de l'électricité, donc décaler les calculs vers les heures propres agit sur les 7 % restants. Le correctif n'est pas étiqueté, il est généré : la porte émet un pipeline enfant ne contenant que les jobs que le changement exige. Deux règles que l'outil ne peut pas enfreindre — la justesse décide et le carbone mesure, et un gain indistinguable de zéro ne s'annonce pas. 191 tests ; merge requests revues par GitLab Duo Agent Platform.",
         tech: ["Python 3.12", "GitLab CI", "GitLab Duo Agent Platform", "ISO/IEC 21031:2024", "pipelines parent-enfant"],
@@ -59,6 +67,8 @@ const GROUPS = [
       },
       {
         title: "Call First",
+        resume:
+          "Anti-arnaque au faux coursier sur l'API Ring. 32 règles cassées exprès, chacune rattrapée par un test. 146 tests.",
         description:
           "Protection contre l'arnaque au faux coursier, sur l'API Ring. Le résident l'allume et choisit qui est prévenu ; aucune reconnaissance de visage ; la famille est alertée quand la porte s'ouvre pour une visite qui n'était pas attendue. La décision est dans du code lisible, pas dans un modèle : 146 tests, et 32 règles cassées volontairement, chacune rattrapée par un test — parce qu'une règle qu'aucun test ne voit tomber n'est pas une règle.",
         tech: ["Python", "API Ring", "FastAPI", "règles déterministes"],
@@ -69,6 +79,8 @@ const GROUPS = [
       },
       {
         title: "Career Match Agent",
+        resume:
+          "Source des offres, génère CV et lettre adaptés. Barrière anti-invention sur du texte venu de tiers. 208 tests.",
         description:
           "Agent de candidature de bout en bout : il source des offres de stage (APIs publiques Greenhouse, Lever, Ashby, et flux RSS), les classe par pertinence, puis génère pour chacune un CV adapté en PDF mis en page et une lettre en Word. Deux boucles à objectifs mesurables — couverture ATS et qualité rédactionnelle déterministe : mélange de langues, champs à trous, fautes — derrière une barrière anti-invention. Le texte des offres vient de tiers : il est clôturé dans le prompt, son délimiteur de fermeture neutralisé, et la consigne placée après lui — parce qu'ici une injection réussie ne produit pas un résumé faux, elle produit un mensonge sur un CV signé. Il prépare, l'humain valide et envoie. 208 tests.",
         tech: ["Python", "FastAPI", "OpenAI", "ATS", "fpdf2"],
@@ -79,6 +91,8 @@ const GROUPS = [
       },
       {
         title: "Tech Watch Agent",
+        resume:
+          "Veille autonome qui apprend de ce que le lecteur marque hors sujet. 101 tests.",
         description:
           "Agent de veille autonome : le LLM juge quels articles comptent, va chercher lui-même le texte complet des plus importants, synthétise les tendances, mémorise d'une exécution à l'autre et apprend de ce que le lecteur marque pertinent ou hors sujet. Le fetch refuse un hôte dont une seule adresse résolue est privée et revalide chaque redirection — et le README écrit ce que cette garde ne couvre pas, plutôt que de laisser croire à une garantie. Fail-open partout. 101 tests.",
         tech: ["Python", "FastAPI", "OpenAI/Anthropic", "APScheduler"],
@@ -89,6 +103,8 @@ const GROUPS = [
       },
       {
         title: "Intelligent Data Cleaner",
+        resume:
+          "Vise un score de qualité chiffré et itère. Livre le script Python qu'on peut rejouer sans l'application. 33 tests.",
         description:
           "Nettoyage de données agentique : il vise un score de qualité chiffré et itère — profilage, le LLM choisit et justifie une stratégie par problème, application, re-profilage, on garde la meilleure version. Repli rule-based si le LLM échoue. Livre le fichier nettoyé et un script Python autonome que l'on peut relire et rejouer sans l'application. Le script exécuté côté serveur ne reçoit plus l'environnement du serveur : il tournait avec la clé d'API, que trois lignes suffisaient à ressortir. 33 tests.",
         tech: ["Python", "FastAPI", "OpenAI", "Pandas", "Next.js", "React"],
@@ -99,6 +115,8 @@ const GROUPS = [
       },
       {
         title: "Glass Box",
+        resume:
+          "L'enregistreur de vol d'un agent : registre chaîné par hachage, pièces adressées par leur contenu, rejeu déterministe.",
         description:
           "L'enregistreur de vol d'un agent. Les outils d'observabilité tracent les appels au modèle : le prompt, la réponse, la latence. Le jour où un agent écrit dans un fichier qu'il n'aurait pas dû toucher, les trois questions qu'on pose vraiment n'ont pas de réponse — sur quelle information il s'appuyait, referait-il la même chose, et ce journal dit-il la vérité. Registre chaîné par hachage, pièces adressées par leur contenu, rejeu déterministe, et le chemin qui remonte d'une action jusqu'à l'octet qui l'a provoquée. Routage à étages sur Nemotron : deux échantillons du petit modèle, escalade si les réponses divergent. Dépôt privé pour l'instant.",
         tech: ["Python", "Nebius Token Factory", "Nemotron", "Hash chain", "CLI"],
@@ -109,6 +127,8 @@ const GROUPS = [
       },
       {
         title: "Tender Compliance Agent",
+        resume:
+          "Lit un dossier de consultation et dit quelles exigences administratives manquent — avant la date limite.",
         description:
           "Les appels d'offres publics sont rejetés sur la paperasse avant que quiconque ait lu la proposition. Cet agent lit le dossier de consultation, en extrait chaque exigence administrative, et dit lesquelles ne sont pas encore satisfaites — avant la date limite, pas après.",
         tech: ["Python", "Strands SDK", "LLM", "Extraction documentaire"],
@@ -126,6 +146,8 @@ const GROUPS = [
     projects: [
       {
         title: "Runway",
+        resume:
+          "Finaliste KeeperHub 2026. Keeper sous mandat on-chain borné, prouvé sur Sepolia. 302 tests.",
         description:
           "Finaliste du hackathon KeeperHub Agent Economy 2026. Un keeper qui décide quels flux de paiement Superfluid ralentir quand une trésorerie s'épuise, et exécute sous un mandat on-chain borné : la permission accordée autorise à ralentir un flux et à le fermer, jamais à en créer un ni à le rediriger. Chaque exécution laisse un enregistrement que `pnpm verify-record` rejoue depuis les faits enregistrés, et qui refuse de valider une écriture qu'aucune décision n'a nommée. Prouvé sur Sepolia. 302 tests.",
         tech: ["TypeScript", "Superfluid", "KeeperHub", "Solidity", "Sepolia"],
@@ -136,6 +158,8 @@ const GROUPS = [
       },
       {
         title: "Fail Closed",
+        resume:
+          "Trois pull requests fusionnées dans KeeperHub : un build effaçait deux fichiers suivis par git et sortait en vert.",
         description:
           "Trois pull requests fusionnées dans KeeperHub : un script de build effaçait deux fichiers suivis par git et sortait en vert. Il échoue maintenant franchement. Petit, mais c'est le genre de bug qui coûte une après-midi à quelqu'un d'autre.",
         tech: ["TypeScript", "CI", "Open source"],
@@ -153,6 +177,8 @@ const GROUPS = [
     projects: [
       {
         title: "AWS EC2 Deployment",
+        resume:
+          "Instances EC2 : SSH, groupes de sécurité, déploiement d'applications web.",
         description:
           "Mise en place d'instances EC2 : configuration SSH, groupes de sécurité, déploiement d'applications web scalables.",
         tech: ["AWS EC2", "SSH", "Security Groups", "Linux"],
@@ -163,6 +189,8 @@ const GROUPS = [
       },
       {
         title: "Nginx Log Analyzer",
+        resume:
+          "Analyse de logs Nginx : métriques de performance, détection d'erreurs, rapports de trafic.",
         description:
           "Analyse de logs Nginx : métriques de performance, détection d'erreurs, rapports de trafic.",
         tech: ["Nginx", "Bash", "Awk"],
@@ -173,6 +201,8 @@ const GROUPS = [
       },
       {
         title: "Server Monitoring Dashboard",
+        resume:
+          "Tableau de bord système en temps réel — CPU, mémoire, disque — avec alertes.",
         description:
           "Tableau de bord système en temps réel : CPU, mémoire, disque, processus, avec alertes.",
         tech: ["Linux", "Bash", "Monitoring"],
@@ -190,6 +220,8 @@ const GROUPS = [
     projects: [
       {
         title: "Titanic Survival Prediction",
+        resume:
+          "Arbre de décision : encodage des variables, évaluation complète.",
         description: "Arbre de décision sur le jeu Titanic. Encodage des variables, évaluation complète.",
         tech: ["Python", "Decision Tree", "scikit-learn"],
         github: "https://github.com/Axl-Projects/ML/tree/main/DecisionTree",
@@ -199,6 +231,8 @@ const GROUPS = [
       },
       {
         title: "Breast Cancer Classification",
+        resume:
+          "KNN sur le jeu Wisconsin : 569 échantillons, 30 variables, k=7.",
         description: "KNN sur le jeu Wisconsin (569 échantillons, 30 variables), k=7, distance euclidienne.",
         tech: ["Python", "KNN", "scikit-learn"],
         github: "https://github.com/Axl-Projects/ML/tree/main/KNN",
@@ -208,6 +242,8 @@ const GROUPS = [
       },
       {
         title: "Diabetes Prediction",
+        resume:
+          "Régression logistique sur le jeu Pima : 768 patients, variables mises à l'échelle.",
         description: "Régression logistique sur le jeu Pima (768 patients), avec mise à l'échelle des variables.",
         tech: ["Python", "Régression logistique", "scikit-learn"],
         github: "https://github.com/Axl-Projects/ML/tree/main/RegressionLogistique",
@@ -217,6 +253,8 @@ const GROUPS = [
       },
       {
         title: "Area",
+        resume:
+          "Plateforme d'automatisation de workflows type IFTTT, avec OAuth. Projet de groupe Epitech.",
         description: "Plateforme d'automatisation de workflows type IFTTT : connexion de services, actions et réactions, OAuth. Projet de groupe Epitech.",
         tech: ["React", "Node.js", "OAuth"],
         github: "https://github.com/Yoh5/Area_project",
@@ -226,6 +264,8 @@ const GROUPS = [
       },
       {
         title: "R-Type",
+        resume:
+          "Le jeu d'arcade en C++ : moteur maison, système d'entités, multijoueur réseau. Epitech.",
         description: "Reproduction du jeu d'arcade R-Type en C++ : moteur maison, collisions, système d'entités, multijoueur réseau. Projet Epitech.",
         tech: ["C++", "SFML", "Réseau"],
         github: "https://github.com/Yoh5/Rtype_project",
@@ -235,6 +275,8 @@ const GROUPS = [
       },
       {
         title: "Shippackage",
+        resume:
+          "Suivi de commandes en Laravel : authentification, upload d'images, API REST. Epitech.",
         description: "Plateforme de suivi de commandes en Laravel : authentification, upload d'images, API REST. Projet Epitech.",
         tech: ["Laravel", "PHP", "MySQL"],
         github: "https://github.com/Yoh5/Shippackage",
@@ -246,67 +288,99 @@ const GROUPS = [
   }
 ];
 
-const ProjectCard = ({ project }) => (
-  <div className="project-card">
-    <div
-      className="project-image"
-      style={{ background: project.image ? "transparent" : project.color }}
-    >
-      {project.image ? (
-        <>
-          <img src={project.image} alt="" className="project-bg-image" />
-          <div className="project-image-overlay">
-            <span className="project-icon-overlay"></span>
-          </div>
-        </>
-      ) : (
-        <span className="project-icon-fallback"></span>
-      )}
-    </div>
+// La carte montre une ligne, et une seule : le résultat mesuré. Le paragraphe
+// complet existe toujours — c'est lui qui soutient la candidature — mais il
+// s'ouvre à la demande.
+//
+// Le défaut qu'on corrige ici : vingt-et-une descriptions de cent-cinquante
+// mots empilées. Un recruteur parcourt une page de projets en une vingtaine de
+// secondes ; un mur de texte dense ne se lit pas « plus sérieux », il ne se lit
+// pas du tout. Stratifier ne retire rien, ça décide de l'ordre de lecture.
+const ProjectCard = ({ project }) => {
+  const [ouvert, setOuvert] = React.useState(false);
+  const idDetail = `detail-${project.title.replace(/\W+/g, "-").toLowerCase()}`;
+  // Sans résumé, on n'ouvre rien : la description tient lieu des deux.
+  const stratifie = Boolean(project.resume);
 
-    <div className="project-content">
-      <h3>
-        {project.title}
-        {/* Un projet en ligne le dit là où le titre se lit, pas seulement dans un
-            bouton en bas de carte. C'est ce qui décide si on clique. */}
-        {project.demo && <span className="project-live">en ligne</span>}
-      </h3>
-      <p>{project.description}</p>
-
-      <div className="tech-stack">
-        {project.tech.map((tech, i) => (
-          <span key={i}>{tech}</span>
-        ))}
-      </div>
-
-      <div className="project-buttons">
-        {project.demo && (
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            Essayer →
-          </a>
-        )}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={project.demo ? "btn btn-secondary" : "btn btn-primary btn-full"}
-          >
-            Code
-          </a>
-        )}
-        {!project.github && !project.demo && (
-          <span className="project-private">Code client privé</span>
+  return (
+    <div className="project-card">
+      <div className="project-image" style={{ background: project.color }}>
+        {project.image ? (
+          <>
+            <img src={project.image} alt="" className="project-bg-image" />
+            <div className="project-image-overlay">
+              <span className="project-icon-overlay"></span>
+            </div>
+          </>
+        ) : (
+          <span className="project-icon-fallback"></span>
         )}
       </div>
+
+      <div className="project-content">
+        <h3>
+          {project.title}
+          {/* Un projet en ligne le dit là où le titre se lit, pas seulement
+              dans un bouton en bas de carte. C'est ce qui décide si on clique. */}
+          {project.demo && <span className="project-live">en ligne</span>}
+        </h3>
+
+        <p className="project-resume">
+          {stratifie ? project.resume : project.description}
+        </p>
+
+        {stratifie && (
+          <>
+            <button
+              type="button"
+              className="project-plus"
+              aria-expanded={ouvert}
+              aria-controls={idDetail}
+              onClick={() => setOuvert((o) => !o)}
+            >
+              {ouvert ? "Replier" : "Comment c'est fait"}
+            </button>
+            <p id={idDetail} className="project-detail" hidden={!ouvert}>
+              {project.description}
+            </p>
+          </>
+        )}
+
+        <div className="tech-stack">
+          {project.tech.map((tech, i) => (
+            <span key={i}>{tech}</span>
+          ))}
+        </div>
+
+        <div className="project-buttons">
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Essayer →
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={project.demo ? "btn btn-secondary" : "btn btn-primary btn-full"}
+            >
+              Code
+            </a>
+          )}
+          {!project.github && !project.demo && (
+            <span className="project-private">Code client privé</span>
+          )}
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Projects = () => (
   <section id="projects" className="projects-section">

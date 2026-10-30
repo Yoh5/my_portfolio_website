@@ -57,8 +57,12 @@ const About = () => {
               <span className="stat-label">Années d'expérience</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">10+</span>
-              <span className="stat-label">Projets réalisés</span>
+              {/* « 10+ » pendant que la page en montre vingt-et-un et que le
+                  héros annonce 1 159 tests : un chiffre arrondi vers le bas
+                  contredit la liste juste en dessous, et c'est le genre de
+                  détail qui fait douter des autres. */}
+              <span className="stat-number">21</span>
+              <span className="stat-label">Projets publiés</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">2</span>
