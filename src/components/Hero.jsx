@@ -70,6 +70,29 @@ const Hero = () => {
           </button>
         </div>
       </div>
+
+      {/* WebP d'abord — 13 ko contre 28 pour le JPEG, ce qui compte sur la
+          connexion que vise ce site. `width`/`height` réservent la place pour
+          que le texte ne saute pas pendant le chargement, et `fetchPriority`
+          le fait venir tôt puisqu'il est au-dessus de la ligne de flottaison. */}
+      <figure className="hero-portrait">
+        <picture>
+          <source
+            type="image/webp"
+            srcSet="/my_portfolio_website/images/axel-560.webp 560w, /my_portfolio_website/images/axel-1120.webp 1120w"
+            sizes="(max-width: 60rem) 10rem, 20rem"
+          />
+          <img
+            src="/my_portfolio_website/images/axel-560.jpg"
+            srcSet="/my_portfolio_website/images/axel-560.jpg 560w, /my_portfolio_website/images/axel-1120.jpg 1120w"
+            sizes="(max-width: 60rem) 10rem, 20rem"
+            width="560"
+            height="560"
+            fetchPriority="high"
+            alt="Axel AHO, de face, les bras croisés."
+          />
+        </picture>
+      </figure>
     </section>
   );
 };

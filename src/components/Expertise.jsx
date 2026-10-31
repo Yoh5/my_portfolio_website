@@ -189,9 +189,12 @@ const Expertise = () => {
               </div>
             </div>
 
-            <button className="explore-btn" type="button" onClick={versLesProjets}>
-              Voir les projets →
-            </button>
+            {/* Le bouton « Voir les projets » était répété sur les quatre
+                cartes : quatre grands rectangles verts côte à côte pour une
+                seule et même destination, alors que les étiquettes juste
+                au-dessus y mènent déjà et que la section se termine par son
+                propre appel. Un accent répété quatre fois ne désigne plus
+                rien. */}
           </article>
         ))}
       </div>

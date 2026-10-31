@@ -2311,3 +2311,95 @@ section[id] {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Le vert, repris — 31/10/2026.
+
+   Premier passage : j'avais remplacé un bleu générique par un vert de sujet,
+   puis je l'avais mis partout où il y avait du bleu — sous-titres en capitales,
+   étiquettes, thèse du héros. Un accent qui teinte de la prose cesse d'être un
+   accent : il devient la couleur du texte, et l'œil n'a plus rien à suivre.
+
+   La règle appliquée ici : **l'accent marque ce qu'on peut actionner et ce qui
+   est un chiffre. Jamais une phrase.**
+
+   Gardent le vert    : les trois chiffres du héros, les numéros d'étape, les
+                        puces et filets (des marqueurs, pas du texte), les
+                        boutons, les liens, l'onglet courant, les icônes.
+   Reviennent à l'encre : la thèse du héros, les sous-titres de carte, le texte
+                        des étiquettes de projet.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* La thèse est déjà la plus grosse chose de la page ; elle n'a pas besoin
+   d'une couleur en plus pour qu'on la lise. Le vert sert alors aux trois
+   chiffres juste en dessous, qui sont la seule chose à prouver. */
+.highlight {
+  color: var(--text-primary);
+}
+
+/* Un sous-titre en capitales vertes sur quatre cartes, c'est quatre lignes de
+   couleur pour une information qui n'est ni cliquable ni chiffrée. */
+.expertise-card .subtitle {
+  color: var(--text-muted);
+}
+
+/* L'étiquette reste un bouton — donc son cadre réagit — mais son texte est de
+   l'encre : trois étiquettes vertes par carte, douze sur la section, noyaient
+   les vraies actions. */
+.project-tag {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+
+.project-tag:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-sourd);
+}
+
+/* ── Le portrait ────────────────────────────────────────────────────────── */
+.hero {
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-content {
+  flex: 1 1 34rem;
+}
+
+.hero-portrait {
+  margin: 0;
+  flex: 0 0 auto;
+  width: 20rem;
+  max-width: 34vw;
+}
+
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Rayon zéro, comme tout le reste : c'est le style retenu, et un portrait
+     en médaillon rond dirait « page perso » là où la page dit « ingénieur ». */
+  border-radius: 0;
+  border: 1px solid var(--border);
+  filter: grayscale(1) contrast(1.04);
+  transition: filter 0.3s ease;
+}
+
+.hero:hover .hero-portrait img {
+  filter: grayscale(0) contrast(1);
+}
+
+@media (max-width: 60rem) {
+  .hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .hero-portrait {
+    width: 10rem;
+    max-width: 40vw;
+  }
+}
