@@ -74,7 +74,7 @@ const GROUPS = [
         tech: ["Python", "API Ring", "FastAPI", "règles déterministes"],
         github: "https://github.com/Yoh5/callfirst",
         demo: "https://callfirst-bgtj.onrender.com/try",
-        image: null,
+        image: "/my_portfolio_website/images/cover-callfirst.jpg",
         color: "linear-gradient(135deg, #e07856, #2c3e50)"
       },
       {
@@ -86,7 +86,7 @@ const GROUPS = [
         tech: ["Python", "FastAPI", "OpenAI", "ATS", "fpdf2"],
         github: "https://github.com/Yoh5/career_match_agent",
         demo: null,
-        image: null,
+        image: "/my_portfolio_website/images/cover-careermatch.jpg",
         color: "linear-gradient(135deg, #f5576c, #f093fb)"
       },
       {
@@ -122,7 +122,7 @@ const GROUPS = [
         tech: ["Python", "Nebius Token Factory", "Nemotron", "Hash chain", "CLI"],
         github: "https://github.com/Yoh5/glassbox",
         demo: null,
-        image: null,
+        image: "/my_portfolio_website/images/cover-glassbox.jpg",
         color: "linear-gradient(135deg, #2c3e50, #4ca1af)"
       },
       {
@@ -134,7 +134,7 @@ const GROUPS = [
         tech: ["Python", "Strands SDK", "LLM", "Extraction documentaire"],
         github: "https://github.com/Yoh5/tender-compliance-agent",
         demo: null,
-        image: null,
+        image: "/my_portfolio_website/images/cover-tender.jpg",
         color: "linear-gradient(135deg, #e17055, #d63031)"
       }
     ]
@@ -153,7 +153,7 @@ const GROUPS = [
         tech: ["TypeScript", "Superfluid", "KeeperHub", "Solidity", "Sepolia"],
         github: "https://github.com/Yoh5/runway",
         demo: null,
-        image: null,
+        image: "/my_portfolio_website/images/cover-runway.jpg",
         color: "linear-gradient(135deg, #0984e3, #00cec9)"
       },
       {
