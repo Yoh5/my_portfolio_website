@@ -71,23 +71,31 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* WebP d'abord — 13 ko contre 28 pour le JPEG, ce qui compte sur la
-          connexion que vise ce site. `width`/`height` réservent la place pour
-          que le texte ne saute pas pendant le chargement, et `fetchPriority`
-          le fait venir tôt puisqu'il est au-dessus de la ligne de flottaison. */}
+      {/* Le portrait est détouré : il n'a plus de fond à lui. La photo d'origine
+          en portait un, blanc, qui donnait un aplat à 13,9:1 sur le thème sombre
+          — l'objet le plus lumineux de la page, devant le titre — et qui
+          disparaissait sur le thème clair, à 1,2:1. Un fond qui ne va avec aucun
+          des deux thèmes se retire ; il ne se corrige pas en arrondissant ses
+          coins. Le bas est fondu dans la page, sinon le détourage laisserait une
+          coupe franche en travers du torse, flottant dans le vide.
+          Régénérer avec `python scripts/detourer_portrait.py`.
+
+          WebP pour tout le monde ou presque ; le PNG ne sert que de repli, donc
+          une seule taille. `width`/`height` réservent la place pour que le texte
+          ne saute pas pendant le chargement, et `fetchPriority` le fait venir
+          tôt puisqu'il est au-dessus de la ligne de flottaison. */}
       <figure className="hero-portrait">
         <picture>
           <source
             type="image/webp"
-            srcSet="/my_portfolio_website/images/axel-560.webp 560w, /my_portfolio_website/images/axel-1120.webp 1120w"
-            sizes="(max-width: 60rem) 10rem, 20rem"
+            srcSet="/my_portfolio_website/images/axel-detoure-560.webp 560w, /my_portfolio_website/images/axel-detoure-787.webp 787w"
+            sizes="(max-width: 60rem) 11rem, 18rem"
           />
           <img
-            src="/my_portfolio_website/images/axel-560.jpg"
-            srcSet="/my_portfolio_website/images/axel-560.jpg 560w, /my_portfolio_website/images/axel-1120.jpg 1120w"
-            sizes="(max-width: 60rem) 10rem, 20rem"
+            src="/my_portfolio_website/images/axel-detoure-560.png"
+            sizes="(max-width: 60rem) 11rem, 18rem"
             width="560"
-            height="560"
+            height="797"
             fetchPriority="high"
             alt="Axel AHO, de face, les bras croisés."
           />

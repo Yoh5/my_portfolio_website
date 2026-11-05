@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Apercus produits par scripts/detourer_portrait.py pour juger le rendu
+scripts/apercu-*.png

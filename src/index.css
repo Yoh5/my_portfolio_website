@@ -2372,7 +2372,9 @@ section[id] {
 .hero-portrait {
   margin: 0;
   flex: 0 0 auto;
-  width: 20rem;
+  /* 18rem et non 20 : l'image est passée du carré au portrait (560x797), donc
+     à largeur égale elle serait bien plus haute et déséquilibrerait le héros. */
+  width: 18rem;
   max-width: 34vw;
 }
 
@@ -2380,10 +2382,10 @@ section[id] {
   display: block;
   width: 100%;
   height: auto;
-  /* Rayon zéro, comme tout le reste : c'est le style retenu, et un portrait
-     en médaillon rond dirait « page perso » là où la page dit « ingénieur ». */
-  border-radius: 0;
-  border: 1px solid var(--border);
+  /* Ni cadre ni rayon : le sujet est détouré, il n'y a plus de boîte à border.
+     L'ancien commentaire disait « rayon zéro comme tout le reste » — c'était
+     faux, le site compte 40 border-radius dont 14 à 20px et ce portrait était
+     le seul à 0. La question ne se pose plus : il n'y a pas de bord. */
   filter: grayscale(1) contrast(1.04);
   transition: filter 0.3s ease;
 }
@@ -2399,7 +2401,7 @@ section[id] {
     gap: 2rem;
   }
   .hero-portrait {
-    width: 10rem;
+    width: 11rem;
     max-width: 40vw;
   }
 }
