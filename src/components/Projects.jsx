@@ -19,7 +19,8 @@ const GROUPS = [
         tech: ["AssemblyAI Voice Agent", "Realtime STT", "Python", "FastAPI", "WebSocket", "Web Audio"],
         github: "https://github.com/Yoh5/probe",
         demo: "https://probe-wkiz.onrender.com",
-        image: null,
+        image: "/my_portfolio_website/images/cover-probe.jpg",
+        vedette: true,
         color: "linear-gradient(135deg, #6A2E5C, #0F6B60)"
       },
       {
@@ -31,7 +32,7 @@ const GROUPS = [
         tech: ["Speechmatics", "Python", "FastAPI", "scikit-learn", "Web Audio"],
         github: "https://github.com/Yoh5/unscripted",
         demo: "https://unscripted.onrender.com",
-        image: null,
+        image: "/my_portfolio_website/images/cover-unscripted.jpg",
         color: "linear-gradient(135deg, #0071E3, #34C759)"
       }
     ]
@@ -50,8 +51,22 @@ const GROUPS = [
         tech: ["Python", "FastAPI", "LangGraph", "OpenAI/Groq", "Supabase", "Docker"],
         github: null,
         demo: null,
-        image: null,
+        image: "/my_portfolio_website/images/cover-holokia.jpg",
+        vedette: true,
         color: "linear-gradient(135deg, #7b2ff7, #f107a3)"
+      },
+      {
+        title: "Spend Mandate",
+        resume:
+          "Un mandat de d\u00e9pense qu'un agent ne peut pas franchir. Le plafond est tenu par du code avant l'appel PayPal, jamais audit\u00e9 apr\u00e8s. 121 tests.",
+        description:
+          "Un agent qui d\u00e9pense est le cas le plus tranchant de l'agentivit\u00e9 excessive : un paiement ne se d\u00e9fait pas. Le mandat \u2014 plafond par transaction, plafond total, fen\u00eatre de validit\u00e9, liste de marchands \u2014 est v\u00e9rifi\u00e9 par le code AVANT l'appel au fournisseur. Un refus n'appelle donc jamais PayPal : ni rembours\u00e9, ni annul\u00e9, jamais envoy\u00e9. Et chaque d\u00e9cision est inscrite dans un registre cha\u00een\u00e9 par hachage, les refus compris \u2014 un registre qui ne montrerait que les succ\u00e8s d\u00e9crirait un agent exemplaire qui n'a jamais rien tent\u00e9 d'interdit. La sc\u00e8ne adverse ne demande pas au mod\u00e8le de d\u00e9sob\u00e9ir : elle change les faits de la page. Mesur\u00e9 contre gpt-5.5, l'injection classique est suivie 0 fois sur 5, la page aux faits modifi\u00e9s 5 fois sur 5 \u2014 et c'est la liste de marchands qui arr\u00eate le paiement.",
+        tech: ["Python", "PayPal Orders v2", "Sandbox", "Biblioth\u00e8que standard", "SHA-256", "Render"],
+        github: "https://github.com/Yoh5/paypal-mandat",
+        demo: "https://spend-mandate-demo.onrender.com",
+        image: "/my_portfolio_website/images/cover-spendmandate.jpg",
+        vedette: true,
+        color: "linear-gradient(135deg, #1e293b, #b91c1c)"
       },
       {
         title: "Carbon Gate",
@@ -62,16 +77,18 @@ const GROUPS = [
         tech: ["Python 3.12", "GitLab CI", "GitLab Duo Agent Platform", "ISO/IEC 21031:2024", "pipelines parent-enfant"],
         github: "https://github.com/Yoh5/carbon-gate",
         demo: null,
-        image: null,
+        image: "/my_portfolio_website/images/cover-carbongate.jpg",
+        vedette: true,
         color: "linear-gradient(135deg, #c2742c, #3fb8a4)"
       },
       {
         title: "Call First",
         resume:
-          "Anti-arnaque au faux coursier sur l'API Ring. 32 règles cassées exprès, chacune rattrapée par un test. 146 tests.",
+          "Anti-arnaque au faux coursier sur l'API Ring. 32 règles cassées exprès, chacune rattrapée par un test. 267 tests.",
         description:
           "Protection contre l'arnaque au faux coursier, sur l'API Ring. Le résident l'allume et choisit qui est prévenu ; aucune reconnaissance de visage ; la famille est alertée quand la porte s'ouvre pour une visite qui n'était pas attendue. La décision est dans du code lisible, pas dans un modèle : 146 tests, et 32 règles cassées volontairement, chacune rattrapée par un test — parce qu'une règle qu'aucun test ne voit tomber n'est pas une règle.",
         tech: ["Python", "API Ring", "FastAPI", "règles déterministes"],
+        vedette: true,
         github: "https://github.com/Yoh5/callfirst",
         demo: "https://callfirst-bgtj.onrender.com/try",
         image: "/my_portfolio_website/images/cover-callfirst.jpg",
@@ -98,7 +115,7 @@ const GROUPS = [
         tech: ["Python", "FastAPI", "OpenAI/Anthropic", "APScheduler"],
         github: "https://github.com/Yoh5/agent_veille_tech",
         demo: null,
-        image: null,
+        image: "/my_portfolio_website/images/cover-veille.jpg",
         color: "linear-gradient(135deg, #11998e, #38ef7d)"
       },
       {
@@ -120,6 +137,7 @@ const GROUPS = [
         description:
           "L'enregistreur de vol d'un agent. Les outils d'observabilité tracent les appels au modèle : le prompt, la réponse, la latence. Le jour où un agent écrit dans un fichier qu'il n'aurait pas dû toucher, les trois questions qu'on pose vraiment n'ont pas de réponse — sur quelle information il s'appuyait, referait-il la même chose, et ce journal dit-il la vérité. Registre chaîné par hachage, pièces adressées par leur contenu, rejeu déterministe, et le chemin qui remonte d'une action jusqu'à l'octet qui l'a provoquée. Routage à étages sur Nemotron : deux échantillons du petit modèle, escalade si les réponses divergent. 329 tests.",
         tech: ["Python", "Nebius Token Factory", "Nemotron", "Hash chain", "CLI"],
+        vedette: true,
         github: "https://github.com/Yoh5/glassbox",
         demo: null,
         image: "/my_portfolio_website/images/cover-glassbox.jpg",
@@ -147,10 +165,11 @@ const GROUPS = [
       {
         title: "Runway",
         resume:
-          "Finaliste KeeperHub 2026. Keeper sous mandat on-chain borné, prouvé sur Sepolia. 302 tests.",
+          "Finaliste KeeperHub 2026. Keeper sous mandat on-chain borné, prouvé sur Sepolia. 309 tests.",
         description:
           "Finaliste du hackathon KeeperHub Agent Economy 2026. Un keeper qui décide quels flux de paiement Superfluid ralentir quand une trésorerie s'épuise, et exécute sous un mandat on-chain borné : la permission accordée autorise à ralentir un flux et à le fermer, jamais à en créer un ni à le rediriger. Chaque exécution laisse un enregistrement que `pnpm verify-record` rejoue depuis les faits enregistrés, et qui refuse de valider une écriture qu'aucune décision n'a nommée. Prouvé sur Sepolia. 302 tests.",
         tech: ["TypeScript", "Superfluid", "KeeperHub", "Solidity", "Sepolia"],
+        vedette: true,
         github: "https://github.com/Yoh5/runway",
         demo: null,
         image: "/my_portfolio_website/images/cover-runway.jpg",
@@ -165,7 +184,7 @@ const GROUPS = [
         tech: ["TypeScript", "Python", "CI", "Open source"],
         github: "https://github.com/Yoh5/fail-closed",
         demo: null,
-        image: null,
+        image: "/my_portfolio_website/images/cover-failclosed.jpg",
         color: "linear-gradient(135deg, #2d3436, #636e72)"
       }
     ]
@@ -382,25 +401,72 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-const Projects = () => (
-  <section id="projects" className="projects-section">
-    <h2 className="section-title">Projets</h2>
+// Vingt-deux cartes d'un bloc, c'est une archive, pas un argument : le lecteur
+// qui survole y trouve « prédiction de survie du Titanic » au même rang qu'un
+// agent en production et en conclut que tout se vaut. Les sept qui portent la
+// candidature passent devant ; le reste existe toujours, à un clic.
+//
+// Les groupes sont conservés pour la suite — ils disent ce qu'on regarde — mais
+// un projet mis en avant n'y réapparaît pas : une carte vue deux fois fait
+// douter de la première.
+const VEDETTES = GROUPS.flatMap((g) => g.projects.filter((p) => p.vedette));
+const RESTE = GROUPS.map((g) => ({
+  ...g,
+  projects: g.projects.filter((p) => !p.vedette),
+})).filter((g) => g.projects.length > 0);
+const NB_RESTE = RESTE.reduce((n, g) => n + g.projects.length, 0);
 
-    {GROUPS.map((group) => (
-      <div className="project-group" key={group.id}>
-        <div className="project-group-head">
-          <h3>{group.title}</h3>
-          {group.note && <p>{group.note}</p>}
-        </div>
+const Projects = () => {
+  const [deplie, setDeplie] = React.useState(false);
 
-        <div className="projects-container">
-          {group.projects.map((project) => (
-            <ProjectCard project={project} key={project.title} />
-          ))}
-        </div>
+  return (
+    <section id="projects" className="projects-section">
+      <h2 className="section-title">Projets</h2>
+      <p className="section-chapeau">
+        Sept projets portent l&apos;essentiel du travail : des agents qui
+        décident dans du code testé, chacun avec sa mesure et son dépôt.
+      </p>
+
+      <div className="projects-container projects-vedettes">
+        {VEDETTES.map((project) => (
+          <ProjectCard project={project} key={project.title} />
+        ))}
       </div>
-    ))}
-  </section>
-);
+
+      <div className="projects-plus">
+        <button
+          type="button"
+          className="btn btn-secondary"
+          aria-expanded={deplie}
+          aria-controls="projets-reste"
+          onClick={() => setDeplie((v) => !v)}
+        >
+          {deplie
+            ? "Replier les autres projets"
+            : `Voir les ${NB_RESTE} autres projets`}
+        </button>
+      </div>
+
+      {/* `hidden` plutôt qu'un démontage : le contenu reste dans le document,
+          donc il est trouvable par la recherche du navigateur et il s'imprime. */}
+      <div id="projets-reste" hidden={!deplie}>
+        {RESTE.map((group) => (
+          <div className="project-group" key={group.id}>
+            <div className="project-group-head">
+              <h3>{group.title}</h3>
+              {group.note && <p>{group.note}</p>}
+            </div>
+
+            <div className="projects-container">
+              {group.projects.map((project) => (
+                <ProjectCard project={project} key={project.title} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default Projects;

@@ -15,8 +15,13 @@ import React from "react";
 // privé alors que son dépôt est public depuis la soumission Nebius : 329 tests
 // n'étaient comptés nulle part. Quand une fiche gagne ou perd un nombre, celui
 // d'ici se recompte — sinon la page se contredit à deux écrans d'intervalle.
+// Recompté le 05/11/2026, et trois fiches étaient fausses — ce total les
+// sommait donc en silence. Les suites ont été exécutées, pas relues : Call
+// First annonçait 146 tests et en passe 267 ; Runway annonçait 302 et en passe
+// 309 ; Career Match affichait 208, c'est juste, c'est son README qui était
+// resté à 199. Spend Mandate entre dans le compte avec ses 121.
 const PREUVES = [
-  { chiffre: "1 488", quoi: "tests sur 8 projets mesurés" },
+  { chiffre: "1 737", quoi: "tests sur 9 projets mesurés" },
   { chiffre: "2", quoi: "agents en production, utilisés chaque jour" },
   { chiffre: "Finaliste", quoi: "KeeperHub Agent Economy 2026" },
 ];

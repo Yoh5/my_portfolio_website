@@ -9,6 +9,8 @@ import Education from "./components/Education";
 import Certifications from "./components/Certifications";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Distinction from "./components/Distinction";
+import Recherche from "./components/Recherche";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -34,6 +36,12 @@ const SECTIONS = [
   { Composant: Certifications },
   { Composant: Skills },
   { Composant: Projects },
+  // La distinction suit les projets : elle parle de Runway, qui vient
+  // d'etre presente. Et la recherche suit la distinction, parce que
+  // c'est la section qui interesse un recruteur R&D, et qu'elle se lit
+  // mieux une fois qu'on sait a qui on a affaire.
+  { Composant: Distinction },
+  { Composant: Recherche },
   { Composant: Contact },
 ];
 

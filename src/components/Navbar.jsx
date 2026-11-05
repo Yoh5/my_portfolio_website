@@ -5,8 +5,14 @@ import { useTheme } from "../context/ThemeContext";
 // « Expertise » de « Compétences ». Cinq destinations, chacune menant à un
 // bloc que le visiteur cherche vraiment ; les sections restent toutes à
 // l'écran, seule la navigation a cessé de prétendre qu'elles comptent autant.
+//
+// Une sixième a été ajoutée depuis, et une seule : « Recherche ». C'est la
+// section que cherche un recruteur R&D, et elle est trop bas dans la page pour
+// être trouvée en faisant défiler. « Distinction » n'y est pas : elle tient en
+// un bloc, juste après les projets, et on la croise forcément en venant de là.
 const LIENS = [
   { id: "projects", label: "Projets" },
+  { id: "recherche", label: "Recherche" },
   { id: "process", label: "Méthode" },
   { id: "experience", label: "Parcours" },
   { id: "skills", label: "Compétences" },
