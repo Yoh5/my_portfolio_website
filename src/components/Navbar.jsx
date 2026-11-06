@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/theme";
 import { useLang, useT } from "../context/lang";
 
 // Neuf entrées, c'était neuf priorités — donc aucune. Et personne ne distingue

@@ -23,7 +23,14 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // `varsIgnorePattern` ne couvre que les declarations. Un composant
+      // recupere par destructuration de parametre -- `map(({ Composant }) =>`
+      // dans App.jsx -- est un ARGUMENT, et il tombait donc en erreur alors
+      // qu'il est bien utilise, en JSX, a la ligne suivante.
+      'no-unused-vars': [
+        'error',
+        { varsIgnorePattern: '^[A-Z_]', argsIgnorePattern: '^[A-Z_]' },
+      ],
     },
   },
 ])
