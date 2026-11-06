@@ -21,20 +21,33 @@
   --shadow: rgba(0, 0, 0, 0.3);
 }
 
+/* Thème clair sur papier plutôt que sur blanc. Le quasi-blanc #f8fafc était
+   le défaut d'une palette d'outil, pas un choix : il éblouit, et il jure avec
+   le portrait détouré, dont les tons de peau et le polo sont chauds.
+   Un beige se lit comme une décision.
+
+   Mais changer le fond change TOUS les rapports de contraste, et c'est ce qui
+   a décidé le reste : l'ancien vert #15803d, choisi pour tenir 4,79:1 sur
+   #f8fafc, tombe à 4,18:1 sur une carte beige — sous le seuil AA. Le vert
+   devait donc bouger aussi. #166534 est le cran plus sombre de la même
+   famille, et il tient 6,49:1 sur le fond et 5,90:1 sur les cartes.
+
+   Les gris passent du slate froid au stone chaud : du texte bleuté sur un
+   fond crème se voit, et pas en bien. Mesures complètes au moment de la
+   pose ; les dix paires qui comptent passent. */
 [data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-card: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  /* 4,79:1 sur #f8fafc, là où le vert clair n'atteint que 2,18:1. */
-  --accent: #15803d;
-  --accent-hover: #166534;
-  --accent-sourd: rgba(21, 128, 61, 0.10);
-  --bg-barre: rgba(248, 250, 252, 0.92);
-  --border: #e2e8f0;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --bg-primary: #f7f4ed;
+  --bg-secondary: #fffdf8;
+  --bg-card: #efe9dd;
+  --text-primary: #1c1917;
+  --text-secondary: #44403c;
+  --text-muted: #6b6560;
+  --accent: #166534;
+  --accent-hover: #14532d;
+  --accent-sourd: rgba(22, 101, 52, 0.10);
+  --bg-barre: rgba(247, 244, 237, 0.92);
+  --border: #d2c7b2;
+  --shadow: rgba(60, 50, 35, 0.10);
 }
 
 /* Reset et base */
@@ -3122,4 +3135,16 @@ section[id] {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+
+/* Ordre de la barre sur grand écran. En sortant les bascules du <ul> pour
+   que le menu mobile puisse se replier sans les emporter, elles se sont
+   retrouvées avant les liens dans le DOM — donc à gauche. L'ordre visuel se
+   repose ici, et la règle mobile plus bas le reprend à son compte. */
+.navbar .nav-links {
+  order: 2;
+}
+
+.navbar .nav-bascules {
+  order: 3;
 }
