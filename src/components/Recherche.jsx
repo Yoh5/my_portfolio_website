@@ -1,6 +1,8 @@
 import React from "react";
 import { useT } from "../context/lang";
 
+const IMG = "/my_portfolio_website/images/";
+
 // Une section à part, et pas une rubrique de plus dans les projets : ce qu'on
 // livre ici n'est pas un logiciel, c'est un résultat mesuré avec sa méthode et
 // ses limites. Un recruteur R&D cherche exactement cette différence, et elle
@@ -33,6 +35,7 @@ const TRAVAUX = [
       en: "One opponent, one prompt, and 40 abandoned games — 32 of them to a network failure that struck before the first move. Three unreadable-move failures, all on the smallest tier: if those correlate with difficulty, it is that tier's hardest games that are missing.",
     },
     lien: "https://github.com/Yoh5/tit-for-tat-llm",
+    cover: "cover-rech-titfortat",
   },
   {
     titre: {
@@ -54,6 +57,7 @@ const TRAVAUX = [
       en: "The result reverses depending on the threshold chosen. The write-up publishes it as such, rather than keeping the most favourable threshold and staying quiet about the rest.",
     },
     lien: "https://github.com/Yoh5/bias-bounty-uhe",
+    cover: "cover-rech-biasbounty",
   },
   {
     titre: { fr: "Donnant-donnant ne gagne pas", en: "Tit for tat does not win" },
@@ -72,6 +76,7 @@ const TRAVAUX = [
       en: "Rankings depend on the field of players: this repository demonstrates exactly that, so it publishes no leaderboard of strategies.",
     },
     lien: "https://github.com/Yoh5/tit-for-tat",
+    cover: "cover-rech-tournoi",
   },
 ];
 
@@ -82,6 +87,19 @@ const Travail = ({ t }) => {
 
   return (
     <article className="recherche-carte">
+      {/* La couverture porte le titre et le chiffre : la carte reste lisible
+          si l'image ne charge pas, et l'image n'y ajoute rien de faux. */}
+      <picture className="recherche-cover">
+        <source type="image/webp" srcSet={`${IMG}${t.cover}.webp`} />
+        <img
+          src={`${IMG}${t.cover}.jpg`}
+          width="1200"
+          height="630"
+          loading="lazy"
+          alt=""
+        />
+      </picture>
+
       <p className="recherche-cadre">{tr(t.cadre)}</p>
       <h3>{tr(t.titre)}</h3>
       <p className="recherche-resultat">{tr(t.resultat)}</p>

@@ -2824,3 +2824,239 @@ section[id] {
   border-radius: 10px;
   border: 1px solid var(--border);
 }
+
+/* --- Mobile : ce qui manquait et ce qui débordait --------------------- */
+
+/* Le bouton n'existe qu'en petite largeur. */
+.nav-burger {
+  display: none;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  color: var(--text-primary);
+  padding: 8px 14px;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 18px;
+  }
+
+  .nav-burger {
+    display: inline-flex;
+    align-items: center;
+    order: 3;
+  }
+
+  /* La règle précédente faisait `display: none` sur la navigation entière,
+     avec un commentaire disant qu'un menu burger viendrait plus tard. Il
+     n'est jamais venu : sur téléphone, il ne restait que le logo, donc ni
+     navigation, ni langue, ni thème. */
+  .nav-links {
+    display: flex;
+    order: 4;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .nav-links.ouvert {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 8px 0 4px;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 4px;
+    /* 44 px de haut au minimum : en dessous, la cible se rate au pouce. */
+    min-height: 44px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Les deux bascules restent dans la barre, visibles sans ouvrir le menu :
+     changer de langue ne doit pas demander de trouver d'abord un bouton. */
+  .nav-bascules {
+    order: 2;
+    margin-left: auto;
+    max-height: none;
+  }
+
+  /* Le formulaire sortait de l'écran : le correctif mobile posait
+     `flex-direction: column` sur un conteneur qui est une grille, ce qui
+     n'a aucun effet. La page faisait 499 px de large pour un écran de 390. */
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  /* Deux colonnes de compétences dépassaient de 8 px. */
+  .skills-list-with-icons {
+    grid-template-columns: 1fr;
+  }
+
+  /* Rien ne doit pouvoir pousser la page au-delà de l'écran. */
+  .projects-container,
+  .recherche-container,
+  .certifications-grid,
+  .cert-parcours-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  /* La frise réserve 80 px à gauche pour la pastille, et le bloc entreprise
+     n'avait pas le droit de rétrécir : logo de 50 px plus un titre long, et
+     la page dépassait de 14 px. Un conteneur flex refuse de passer sous la
+     taille de son contenu tant qu'on ne l'y autorise pas. */
+  .experience-item,
+  .experience-item.right {
+    padding-left: 64px;
+  }
+
+  .company-brand {
+    flex-wrap: wrap;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .company-info {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .company-info h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .company-logo-inline {
+    width: 38px;
+    height: 38px;
+  }
+
+  .experience-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Le héros est centré verticalement dans 100vh, avec `overflow: hidden`.
+     Sur téléphone le contenu dépasse cette hauteur : le centrage pousse le
+     haut hors du cadre et la coupe tombait au sommet du crâne du portrait.
+     On aligne en haut et on laisse la hauteur suivre le contenu. */
+  .hero {
+    min-height: auto;
+    justify-content: flex-start;
+    padding: 6.5rem 20px 3rem;
+  }
+
+  /* Le portrait est le premier élément en colonne inversée : il n'a pas
+     besoin d'occuper 40 % de la largeur, le texte compte davantage. */
+  .hero-portrait {
+    width: 9.5rem;
+    max-width: 45vw;
+  }
+
+  /* Les sections respiraient sur 80 px de marge latérale, ce qui ne laisse
+     presque rien au texte sur un écran de 375. */
+  .projects-section,
+  .recherche-section,
+  .distinction-section,
+  .certifications-section,
+  .skills-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .cert-parcours,
+  .recherche-carte {
+    padding: 1.4rem 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* La barre est translucide, ce qui va quand elle ne fait qu'une ligne.
+     Déplié par-dessus le héros, le menu laissait voir le portrait derrière
+     les libellés. Un fond opaque sous le panneau seulement. */
+  .nav-links.ouvert {
+    background: var(--bg-primary);
+    margin: 0 -18px;
+    padding: 8px 18px 6px;
+    box-shadow: 0 14px 28px var(--shadow);
+  }
+}
+
+/* La couverture d'un travail de recherche : décorative au sens strict — son
+   `alt` est vide parce que le titre et le chiffre qu'elle porte sont déjà
+   dans le texte juste en dessous. L'annoncer deux fois ferait perdre du
+   temps à un lecteur d'écran. */
+/* En bandeau de tête, bord à bord, et non flottante dans la carte : posée
+   à l'intérieur avec sa propre bordure, elle répétait le titre et le chiffre
+   affichés juste en dessous et se lisait comme un doublon. Elle coiffe la
+   carte, comme sur les fiches projet, où le même dispositif ne gêne pas. */
+.recherche-cover {
+  display: block;
+  /* La carte est un conteneur flex avec `align-items: flex-start` : sans
+     `align-self: stretch` le bandeau garde la largeur de son contenu et les
+     marges negatives ne mordent sur rien. Et `max-width: 100%` herite de la
+     regle generale des enfants de carte, qui l'empeche de deborder. */
+  align-self: stretch;
+  max-width: none !important;
+  margin: -2rem -2.2rem 1.4rem;
+}
+
+.recherche-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px 20px 0 0;
+}
+
+@media (max-width: 640px) {
+  /* 44 px de haut au minimum pour ce qui se touche : en dessous, la cible se
+     rate au pouce et l'utilisateur appuie deux fois. Le rembourrage vertical
+     est pris sur le bouton, pas sur son conteneur, pour que la zone cliquable
+     grandisse vraiment et pas seulement l'espace autour. */
+  .nav-burger,
+  .lang-toggle,
+  .theme-toggle {
+    min-height: 44px;
+  }
+
+  .project-plus,
+  .piece-voir {
+    min-height: 44px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .btn {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Les marges de la carte changent en petite largeur : le bandeau doit les
+     suivre, sinon il laisse une bande de fond de chaque côté. */
+  .recherche-cover {
+    margin: -1.4rem -1.2rem 1.1rem;
+  }
+}

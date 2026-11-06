@@ -26,6 +26,7 @@ const Navbar = () => {
   const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [actif, setActif] = useState("");
+  const [menu, setMenu] = useState(false);
 
   useEffect(() => {
     const surDefilement = () => setScrolled(window.scrollY > 50);
@@ -54,6 +55,9 @@ const Navbar = () => {
   const allerA = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+    // Sinon le panneau reste ouvert par-dessus la section qu'on vient
+    // d'atteindre, et il faut le refermer à la main pour voir le résultat.
+    setMenu(false);
   };
 
   return (
@@ -69,26 +73,27 @@ const Navbar = () => {
         4x3l_4H0
       </a>
 
-      <ul className="nav-links">
-        {LIENS.map((lien) => (
-          <li key={lien.id}>
-            <a
-              href={`#${lien.id}`}
-              aria-current={actif === lien.id ? "true" : undefined}
-              onClick={(e) => {
-                e.preventDefault();
-                allerA(lien.id);
-              }}
-            >
-              {t(lien.label)}
-            </a>
-          </li>
-        ))}
+      {/* Le bouton n'existe qu'en dessous de 640 px, où les liens se
+          replient. Au-dessus, il est masqué par la feuille de style. */}
+      <button
+        type="button"
+        className="nav-burger"
+        aria-expanded={menu}
+        aria-controls="nav-liens"
+        aria-label={
+          menu
+            ? t({ fr: "Fermer le menu", en: "Close the menu" })
+            : t({ fr: "Ouvrir le menu", en: "Open the menu" })
+        }
+        onClick={() => setMenu((v) => !v)}
+      >
+        <i className={menu ? "fas fa-xmark" : "fas fa-bars"} aria-hidden="true" />
+      </button>
 
         {/* Deux bascules côte à côte, même gabarit. Le bouton de langue affiche
             la langue vers laquelle il mène, pas celle qui est active : un
             bouton marqué « FR » quand on lit déjà du français n'apprend rien. */}
-        <li className="nav-bascules">
+        <div className="nav-bascules">
           <button
             type="button"
             className="lang-toggle"
@@ -113,7 +118,24 @@ const Navbar = () => {
               aria-hidden="true"
             />
           </button>
-        </li>
+        </div>
+
+      <ul id="nav-liens" className={`nav-links ${menu ? "ouvert" : ""}`}>
+        {LIENS.map((lien) => (
+          <li key={lien.id}>
+            <a
+              href={`#${lien.id}`}
+              aria-current={actif === lien.id ? "true" : undefined}
+              onClick={(e) => {
+                e.preventDefault();
+                allerA(lien.id);
+              }}
+            >
+              {t(lien.label)}
+            </a>
+          </li>
+        ))}
+
       </ul>
     </nav>
   );

@@ -149,6 +149,31 @@ for nom, titre, phrase, preuve in A_PRODUIRE:
     ko = couverture(nom, titre, phrase, preuve)
     print("  %-22s %3d/%3d Ko (webp/jpg)" % (nom, *ko))
 
+# --- 2 bis. Les travaux de recherche --------------------------------------
+#     Meme fabrique que les couvertures de projet : un titre, la question, et
+#     le chiffre qui la tranche. Un article ou un carnet n'a pas de capture
+#     d'ecran a montrer, et un graphique sorti de son protocole ne dit rien.
+RECHERCHE = [
+    ("cover-rech-titfortat", "Tit for Tat, LLM",
+     "Ce qui sépare deux tailles d'un même modèle n'est pas de trahir moins, "
+     "c'est de savoir rentrer après avoir été puni.",
+     "14 % contre 100 % de réparation"),
+    ("cover-rech-biasbounty", "Bias Bounty",
+     "La seule couche fine de chaleur urbaine manque là où le barème "
+     "automatique ne peut pas la déclarer manquante.",
+     "691 secteurs sur 1 192  ·  85,8 % tribaux"),
+    ("cover-rech-tournoi", "Donnant-donnant",
+     "Axelrod a bien organisé un tournoi et Donnant-donnant l'a bien gagné. "
+     "La suite de l'histoire ne tient pas.",
+     "76 à 79 % d'accidents sans retour"),
+]
+
+print()
+print("Couvertures de recherche :")
+for nom, titre, phrase, preuve in RECHERCHE:
+    ko = couverture(nom, titre, phrase, preuve)
+    print("  %-26s %3d/%3d Ko (webp/jpg)" % (nom, *ko))
+
 # --- 3. La distinction KeeperHub, citee et non fondue ----------------------
 PLANCHE = os.path.join(ATELIER, "document_rapport_stage", "candidature",
                        "keeperhub-hackathon-finalists.jpg")
