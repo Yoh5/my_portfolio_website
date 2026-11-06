@@ -3060,3 +3060,66 @@ section[id] {
     margin: -1.4rem -1.2rem 1.1rem;
   }
 }
+
+@media (max-width: 640px) {
+  /* La frise mangeait presque tout l'écran en marges empilées : 80 px de
+     section, puis 64 à gauche et 50 à droite sur l'élément pour la rampe,
+     puis 30 tout autour de la carte. Sur 375 px de large il restait 41 px
+     de texte, et « AI / Agent Engineer » se coupait en plein mot.
+     On compte : 16 de section + 46 de rampe + 16 de carte = 297 px utiles. */
+  .experience-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .experience-item,
+  .experience-item.right {
+    padding-left: 46px;
+    padding-right: 0;
+  }
+
+  .experience-content {
+    padding: 18px 16px;
+  }
+
+  .timeline::before {
+    left: 17px;
+  }
+
+  .company-logo-timeline,
+  .experience-item.right .company-logo-timeline,
+  .experience-item.left .company-logo-timeline {
+    width: 34px;
+    height: 34px;
+    left: 0;
+  }
+
+  .company-logo-timeline .company-icon {
+    font-size: 14px;
+  }
+
+  /* La date et le lieu se posaient l'un sous l'autre, un mot par ligne. */
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+
+  .meta span {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Quatre sections gardaient les 80 px de marge latérale du bureau : sur
+     375 px d'écran, ça laisse 215 px au texte. Relevé par mesure, pas à
+     l'œil — c'est le genre de reste qu'on ne voit pas en faisant défiler. */
+  .about,
+  .education-section,
+  .contact-section,
+  footer,
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
