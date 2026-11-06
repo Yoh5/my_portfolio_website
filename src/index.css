@@ -2757,3 +2757,70 @@ section[id] {
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* --- Le parcours Anthropic ---------------------------------------------
+   Sept certificats du même émetteur, groupés plutôt qu'alignés dans la
+   grille : sept cartes presque identiques noieraient les quatre autres au
+   lieu de peser. Le bloc dit le parcours ; les certificats sont la preuve,
+   disponible et non imposée. */
+.cert-parcours {
+  max-width: 1000px;
+  margin: 0 auto 3.5rem;
+  padding: 2rem 2.2rem;
+  background: var(--bg-card);
+  border-radius: 20px;
+  border-left: 3px solid var(--accent);
+}
+
+.cert-parcours-tete h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.cert-parcours-tete p {
+  margin: 0 0 1.2rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.cert-parcours-liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cert-parcours-liste li {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent-sourd);
+  color: var(--accent);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.cert-parcours-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 1.4rem;
+}
+
+.cert-parcours-images figure {
+  margin: 0;
+}
+
+/* Les certificats sont des aplats de couleur claire : sur le thème sombre
+   ils brillent comme la photo du héros le faisait. Un filet les pose, et le
+   rayon les rattache au reste du système. */
+.cert-parcours-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
