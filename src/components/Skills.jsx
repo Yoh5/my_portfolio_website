@@ -44,8 +44,8 @@ const Skills = () => {
         { name: "NumPy", icon: "devicon-numpy-plain colored" },
         { name: "Matplotlib", icon: "devicon-matplotlib-plain colored" },
         { name: "TensorFlow", icon: "devicon-tensorflow-original colored" },
-        { name: "Régression / Classification", icon: "fas fa-chart-line" },
-        { name: "Clustering (K-Means, PCA)", icon: "fas fa-braille" }
+        { name: { fr: "Régression / Classification", en: "Regression / Classification" }, icon: "fas fa-chart-line" },
+        { name: { fr: "Clustering (K-Means, ACP)", en: "Clustering (K-Means, PCA)" }, icon: "fas fa-braille" }
       ]
     },
     {
@@ -146,7 +146,7 @@ const Skills = () => {
               {category.skills.map((skill, i) => (
                 <li key={i} className="skill-item-with-icon">
                   <i className={skill.icon}></i>
-                  <span>{skill.name}</span>
+                  <span>{t(skill.name)}</span>
                 </li>
               ))}
             </ul>
