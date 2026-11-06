@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useT } from "../context/lang";
 
 // Quatre couleurs décoratives, une par carte, mesurées le 31/10/2026 : sept
 // combinaisons sur huit échouaient au contraste. Le violet #7c3aed rendait
@@ -27,7 +28,7 @@ const PILIERS = [
   {
     id: "agents",
     title: "AI Agents & LLM Engineering",
-    subtitle: "Agents LLM en production",
+    subtitle: { fr: "Agents LLM en production", en: "LLM agents in production" },
     // Trois nœuds reliés : l'orchestration, pas un robot.
     icone: (
       <>
@@ -38,11 +39,11 @@ const PILIERS = [
       </>
     ),
     description:
-      "Conception d'agents LLM qui planifient, utilisent des outils, mémorisent et s'auto-corrigent — de la conception à la mise en production (CI/CD), avec tests et fail-open.",
+      { fr: "Conception d'agents LLM qui planifient, utilisent des outils, mémorisent et s'auto-corrigent — de la conception à la mise en production (CI/CD), avec tests et fail-open.", en: "Designing LLM agents that plan, use tools, remember and correct themselves — from design to production (CI/CD), with tests and fail-open behaviour." },
     highlights: [
-      "Orchestration d'agents (LangGraph)",
-      "Boucles agentiques : planning, mémoire, feedback",
-      "Tool-use, tests & robustesse (fail-open)",
+      { fr: "Orchestration d'agents (LangGraph)", en: "Agent orchestration (LangGraph)" },
+      { fr: "Boucles agentiques : planning, mémoire, feedback", en: "Agentic loops: planning, memory, feedback" },
+      { fr: "Tool-use, tests & robustesse (fail-open)", en: "Tool use, tests & robustness (fail-open)" },
       "OpenAI · Groq · Anthropic · Nebius",
     ],
     projets: ["Holokia Interview Agent", "Tech Watch Agent", "Career Match Agent"],
@@ -51,7 +52,7 @@ const PILIERS = [
   {
     id: "backend",
     title: "Backend Engineering",
-    subtitle: "Architecture robuste & APIs",
+    subtitle: { fr: "Architecture robuste & APIs", en: "Solid architecture & APIs" },
     icone: (
       <>
         <rect x="3" y="4" width="18" height="6" rx="1.5" />
@@ -60,20 +61,20 @@ const PILIERS = [
       </>
     ),
     description:
-      "Systèmes backend scalables avec FastAPI, Django, Node.js et Laravel. Authentification sécurisée, APIs REST et gestion de bases de données.",
+      { fr: "Systèmes backend scalables avec FastAPI, Django, Node.js et Laravel. Authentification sécurisée, APIs REST et gestion de bases de données.", en: "Scalable backend systems with FastAPI, Django, Node.js and Laravel. Secure authentication, REST APIs and database work." },
     highlights: [
-      "APIs REST sécurisées (JWT, OAuth)",
+      { fr: "APIs REST sécurisées (JWT, OAuth)", en: "Secure REST APIs (JWT, OAuth)" },
       "FastAPI · Django · Node.js · Laravel",
-      "Architecture MVC & microservices",
+      { fr: "Architecture MVC & microservices", en: "MVC architecture & microservices" },
       "PostgreSQL · Supabase · Redis · MySQL",
     ],
     projets: ["Probe", "Shippackage", "Area"],
-    experience: "2+ ans",
+    experience: { fr: "2+ ans", en: "2+ years" },
   },
   {
     id: "cloud",
     title: "Cloud & DevOps",
-    subtitle: "Infrastructure, Docker & CI/CD",
+    subtitle: { fr: "Infrastructure, Docker & CI/CD", en: "Infrastructure, Docker & CI/CD" },
     icone: (
       <>
         <path d="M7 18h9a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 6.1 11.2 3.4 3.4 0 0 0 7 18Z" />
@@ -81,20 +82,20 @@ const PILIERS = [
       </>
     ),
     description:
-      "Conteneurisation Docker, CI/CD (GitHub Actions, GitLab CI), déploiement cloud (AWS EC2, Render). Administration Linux, Nginx et monitoring.",
+      { fr: "Conteneurisation Docker, CI/CD (GitHub Actions, GitLab CI), déploiement cloud (AWS EC2, Render). Administration Linux, Nginx et monitoring.", en: "Docker containerisation, CI/CD (GitHub Actions, GitLab CI), cloud deployment (AWS EC2, Render). Linux administration, Nginx and monitoring." },
     highlights: [
-      "Docker & conteneurisation",
-      "CI/CD & déploiement continu",
+      { fr: "Docker & conteneurisation", en: "Docker & containerisation" },
+      { fr: "CI/CD & déploiement continu", en: "CI/CD & continuous deployment" },
       "AWS EC2 · Render · Linux · SSH",
-      "Nginx & analyse de logs",
+      { fr: "Nginx & analyse de logs", en: "Nginx & log analysis" },
     ],
     projets: ["Carbon Gate", "AWS EC2 Deployment", "Nginx Log Analyzer"],
-    experience: "1+ an",
+    experience: { fr: "1+ an", en: "1+ year" },
   },
   {
     id: "ml",
     title: "Machine Learning & Data",
-    subtitle: "Fondations ML & pipelines de données",
+    subtitle: { fr: "Fondations ML & pipelines de données", en: "ML foundations & data pipelines" },
     icone: (
       <>
         <path d="M4 20V4" />
@@ -105,15 +106,15 @@ const PILIERS = [
       </>
     ),
     description:
-      "Bases solides en ML (régression, classification, clustering) et en data engineering (ETL, SQL, reporting) — de la théorie aux pipelines.",
+      { fr: "Bases solides en ML (régression, classification, clustering) et en data engineering (ETL, SQL, reporting) — de la théorie aux pipelines.", en: "Solid foundations in ML (regression, classification, clustering) and data engineering (ETL, SQL, reporting) — from theory to pipelines." },
     highlights: [
-      "Régression · classification · clustering",
+      { fr: "Régression · classification · clustering", en: "Regression · classification · clustering" },
       "Python : scikit-learn, Pandas, NumPy",
-      "SQL avancé & optimisation",
-      "ETL & reporting (Orabank)",
+      { fr: "SQL avancé & optimisation", en: "Advanced SQL & tuning" },
+      { fr: "ETL & reporting (Orabank)", en: "ETL & reporting (Orabank)" },
     ],
     projets: ["Unscripted", "Intelligent Data Cleaner", "Diabetes Prediction"],
-    experience: "1+ an",
+    experience: { fr: "1+ an", en: "1+ year" },
   },
 ];
 
@@ -136,12 +137,17 @@ const Expertise = () => {
   const versLesProjets = () =>
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
 
+  const t = useT();
+
   return (
     <section id="expertise" className="expertise-section">
       <div className="expertise-header">
-        <h2 className="section-title">Mon Expertise</h2>
+        <h2 className="section-title">{t({ fr: "Mon expertise", en: "My expertise" })}</h2>
         <p className="expertise-subtitle">
-          Quatre piliers techniques, chacun rattaché à des projets de cette page.
+          {t({
+            fr: "Quatre piliers techniques, chacun rattaché à des projets de cette page.",
+            en: "Four technical pillars, each tied to projects on this page.",
+          })}
         </p>
       </div>
 
@@ -152,24 +158,24 @@ const Expertise = () => {
               <span className="card-icon">
                 <Icone chemin={p.icone} />
               </span>
-              <span className="experience-badge">{p.experience}</span>
+              <span className="experience-badge">{t(p.experience)}</span>
             </div>
 
             <h3>{p.title}</h3>
-            <p className="subtitle">{p.subtitle}</p>
-            <p className="description">{p.description}</p>
+            <p className="subtitle">{t(p.subtitle)}</p>
+            <p className="description">{t(p.description)}</p>
 
             <div className="highlights">
-              <h4>Compétences clés</h4>
+              <h4>{t({ fr: "Compétences clés", en: "Key skills" })}</h4>
               <ul>
                 {p.highlights.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={t(item)}>{t(item)}</li>
                 ))}
               </ul>
             </div>
 
             <div className="related-projects">
-              <h4>Projets associés</h4>
+              <h4>{t({ fr: "Projets associés", en: "Related projects" })}</h4>
               {/* Les trois noms cités existaient parfois sur cette carte et
                   nulle part ailleurs — « Auth API Laravel », « GitHub Actions
                   Deployment », « Bank Reporting (Orabank) » n'étaient dans

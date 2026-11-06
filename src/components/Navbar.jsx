@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
+import { useLang, useT } from "../context/lang";
 
 // Neuf entrées, c'était neuf priorités — donc aucune. Et personne ne distingue
 // « Expertise » de « Compétences ». Cinq destinations, chacune menant à un
@@ -11,16 +12,18 @@ import { useTheme } from "../context/ThemeContext";
 // être trouvée en faisant défiler. « Distinction » n'y est pas : elle tient en
 // un bloc, juste après les projets, et on la croise forcément en venant de là.
 const LIENS = [
-  { id: "projects", label: "Projets" },
-  { id: "recherche", label: "Recherche" },
-  { id: "process", label: "Méthode" },
-  { id: "experience", label: "Parcours" },
-  { id: "skills", label: "Compétences" },
+  { id: "projects", label: { fr: "Projets", en: "Projects" } },
+  { id: "recherche", label: { fr: "Recherche", en: "Research" } },
+  { id: "process", label: { fr: "Méthode", en: "Method" } },
+  { id: "experience", label: { fr: "Parcours", en: "Experience" } },
+  { id: "skills", label: { fr: "Compétences", en: "Skills" } },
   { id: "contact", label: "Contact" },
 ];
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
+  const { lang, basculer } = useLang();
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [actif, setActif] = useState("");
 
@@ -77,18 +80,40 @@ const Navbar = () => {
                 allerA(lien.id);
               }}
             >
-              {lien.label}
+              {t(lien.label)}
             </a>
           </li>
         ))}
 
-        <button
-          className="theme-toggle"
-          onClick={toggleTheme}
-          aria-label={theme === "dark" ? "Passer en thème clair" : "Passer en thème sombre"}
-        >
-          {theme === "dark" ? "☀️" : "🌙"}
-        </button>
+        {/* Deux bascules côte à côte, même gabarit. Le bouton de langue affiche
+            la langue vers laquelle il mène, pas celle qui est active : un
+            bouton marqué « FR » quand on lit déjà du français n'apprend rien. */}
+        <li className="nav-bascules">
+          <button
+            type="button"
+            className="lang-toggle"
+            onClick={basculer}
+            aria-label={lang === "fr" ? "Switch to English" : "Passer en français"}
+          >
+            {lang === "fr" ? "EN" : "FR"}
+          </button>
+
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={
+              theme === "dark"
+                ? t({ fr: "Passer en thème clair", en: "Switch to light theme" })
+                : t({ fr: "Passer en thème sombre", en: "Switch to dark theme" })
+            }
+          >
+            <i
+              className={theme === "dark" ? "fas fa-sun" : "fas fa-moon"}
+              aria-hidden="true"
+            />
+          </button>
+        </li>
       </ul>
     </nav>
   );

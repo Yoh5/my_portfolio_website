@@ -1,4 +1,5 @@
 import React from "react";
+import { useT } from "../context/lang";
 
 const certifications = [
   {
@@ -18,7 +19,7 @@ const certifications = [
     image: "/my_portfolio_website/images/coursera_1.jpg"
   },
   {
-    name: "Gestion de Projet",
+    name: { fr: "Gestion de projet", en: "Project management" },
     provider: "Coursera",
     year: "2025",
     color: "#0056d2", // Couleur Coursera
@@ -35,6 +36,8 @@ const certifications = [
 ];
 
 const Certifications = () => {
+  const t = useT();
+
   return (
     <section id="certifications" className="certifications-section">
       <h2 className="section-title">Certifications</h2>
@@ -51,7 +54,7 @@ const Certifications = () => {
                 <div className="cert-image-container">
                   <img 
                     src={cert.image} 
-                    alt={cert.name} 
+                    alt={t(cert.name)} 
                     className="cert-image"
                   />
                   <div className="cert-image-overlay">
@@ -73,7 +76,7 @@ const Certifications = () => {
 
             {/* Contenu */}
             <div className="cert-content">
-              <h3>{cert.name}</h3>
+              <h3>{t(cert.name)}</h3>
               <p className="provider" style={{ color: cert.color }}>
                 {cert.provider}
               </p>

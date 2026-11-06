@@ -1,4 +1,5 @@
 import React from "react";
+import { useT } from "../context/lang";
 
 // Le héros portait une animation de titres de poste qui tournaient — « AI /
 // Agent Engineer », puis trois variantes. C'est le dispositif le plus templaté
@@ -21,12 +22,26 @@ import React from "react";
 // 309 ; Career Match affichait 208, c'est juste, c'est son README qui était
 // resté à 199. Spend Mandate entre dans le compte avec ses 121.
 const PREUVES = [
-  { chiffre: "1 737", quoi: "tests sur 9 projets mesurés" },
-  { chiffre: "2", quoi: "agents en production, utilisés chaque jour" },
-  { chiffre: "Finaliste", quoi: "KeeperHub Agent Economy 2026" },
+  {
+    chiffre: { fr: "1 737", en: "1,737" },
+    quoi: { fr: "tests sur 9 projets mesurés", en: "tests across 9 measured projects" },
+  },
+  {
+    chiffre: "2",
+    quoi: {
+      fr: "agents en production, utilisés chaque jour",
+      en: "agents in production, used every day",
+    },
+  },
+  {
+    chiffre: { fr: "Finaliste", en: "Finalist" },
+    quoi: "KeeperHub Agent Economy 2026",
+  },
 ];
 
 const Hero = () => {
+  const t = useT();
+
   const allerA = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -44,34 +59,40 @@ const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-content">
-        <p className="hero-eyebrow">Axel AHO — Ingénieur IA &amp; agents</p>
+        <p className="hero-eyebrow">
+          {t({ fr: "Axel AHO — Ingénieur IA & agents", en: "Axel AHO — AI & agent engineer" })}
+        </p>
 
         <h1 className="hero-these">
-          Le modèle lit.<br />
-          <span className="highlight">Le code décide.</span>
+          {t({ fr: "Le modèle lit.", en: "The model reads." })}
+          <br />
+          <span className="highlight">
+            {t({ fr: "Le code décide.", en: "The code decides." })}
+          </span>
         </h1>
 
         <p className="hero-sous">
-          Je construis des agents LLM qui tournent en production — et je mets la
-          décision dans du code testé plutôt que dans un prompt. Quand un agent
-          se trompe, ce qui l'arrête doit être relisible par un humain.
+          {t({
+            fr: "Je construis des agents LLM qui tournent en production — et je mets la décision dans du code testé plutôt que dans un prompt. Quand un agent se trompe, ce qui l'arrête doit être relisible par un humain.",
+            en: "I build LLM agents that run in production — and I put the decision in tested code rather than in a prompt. When an agent gets it wrong, whatever stops it has to be readable by a human.",
+          })}
         </p>
 
         <ul className="hero-preuves">
           {PREUVES.map((p) => (
-            <li key={p.quoi}>
-              <strong>{p.chiffre}</strong>
-              <span>{p.quoi}</span>
+            <li key={t(p.quoi)}>
+              <strong>{t(p.chiffre)}</strong>
+              <span>{t(p.quoi)}</span>
             </li>
           ))}
         </ul>
 
         <div className="hero-buttons">
           <button className="btn btn-primary" onClick={() => allerA("projects")}>
-            Voir les projets →
+            {t({ fr: "Voir les projets", en: "See the projects" })} →
           </button>
           <button className="btn btn-secondary" onClick={telechargerCV}>
-            Télécharger le CV
+            {t({ fr: "Télécharger le CV", en: "Download the CV" })}
           </button>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useT } from "../context/lang";
 
 // La section qui manquait, et c'était la plus coûteuse à ne pas avoir : la
 // thèse qui traverse Probe, Carbon Gate, Call First, Runway et le reste vivait
@@ -10,44 +11,73 @@ import React from "react";
 const ETAPES = [
   {
     rang: "01",
-    titre: "Le modèle lit, il ne décide pas",
+    titre: { fr: "Le modèle lit, il ne décide pas", en: "The model reads, it does not decide" },
     corps:
-      "Un LLM transcrit, extrait, reformule — ce qu'il fait bien. Ce qui autorise, refuse ou chiffre vit dans du code qu'on peut relire ligne à ligne.",
+{
+      fr: "Un LLM transcrit, extrait, reformule — ce qu'il fait bien. Ce qui autorise, refuse ou chiffre vit dans du code qu'on peut relire ligne à ligne.",
+      en: "An LLM transcribes, extracts, rephrases — what it is good at. Whatever allows, refuses or quantifies lives in code you can read line by line.",
+    },
     preuve:
-      "Probe : le modèle ne voit jamais les quatre signaux de diction et ne choisit jamais l'instruction. Il choisit la formulation.",
+{
+      fr: "Probe : le modèle ne voit jamais les quatre signaux de diction et ne choisit jamais l'instruction. Il choisit la formulation.",
+      en: "Probe: the model never sees the four speech signals and never picks the instruction. It picks the wording.",
+    },
   },
   {
     rang: "02",
-    titre: "Mesurer avant d'affirmer",
+    titre: { fr: "Mesurer avant d'affirmer", en: "Measure before claiming" },
     corps:
-      "Un chiffre sur une page veut dire qu'il a été obtenu, avec sa méthode et ses limites écrites à côté. Un résultat indistinguable de zéro ne s'annonce pas.",
+{
+      fr: "Un chiffre sur une page veut dire qu'il a été obtenu, avec sa méthode et ses limites écrites à côté. Un résultat indistinguable de zéro ne s'annonce pas.",
+      en: "A figure on a page means it was obtained, with its method and its limits written beside it. A result indistinguishable from zero does not get announced.",
+    },
     preuve:
-      "Carbon Gate : chaque résultat est un intervalle, et quand l'intervalle contient zéro, le rapport l'écrit au lieu de publier un nombre.",
+{
+      fr: "Carbon Gate : chaque résultat est un intervalle, et quand l'intervalle contient zéro, le rapport l'écrit au lieu de publier un nombre.",
+      en: "Carbon Gate: every result is an interval, and when the interval contains zero the report says so instead of publishing a number.",
+    },
   },
   {
     rang: "03",
-    titre: "Faire tomber la règle pour la croire",
+    titre: { fr: "Faire tomber la règle pour la croire", en: "Break the rule to believe it" },
     corps:
-      "Une garde qu'aucun test ne voit se déclencher n'est pas une garde. On la casse exprès et on vérifie que quelque chose la rattrape.",
+{
+      fr: "Une garde qu'aucun test ne voit se déclencher n'est pas une garde. On la casse exprès et on vérifie que quelque chose la rattrape.",
+      en: "A guard no test ever sees fire is not a guard. You break it on purpose and check that something catches it.",
+    },
     preuve:
-      "Call First : 32 règles cassées volontairement, chacune rattrapée par un test.",
+{
+      fr: "Call First : 32 règles cassées volontairement, chacune rattrapée par un test.",
+      en: "Call First: 32 rules broken on purpose, each one caught by a test.",
+    },
   },
   {
     rang: "04",
-    titre: "Dire ce qui n'est pas couvert",
+    titre: { fr: "Dire ce qui n'est pas couvert", en: "State what is not covered" },
     corps:
-      "La limite va dans le livrable, pas dans une note de bas de page. C'est ce qui sépare un outil d'une démonstration.",
+{
+      fr: "La limite va dans le livrable, pas dans une note de bas de page. C'est ce qui sépare un outil d'une démonstration.",
+      en: "The limit goes in the deliverable, not in a footnote. That is what separates a tool from a demo.",
+    },
     preuve:
-      "Unscripted : 89 % de justesse en laissant une session de côté, sur 20 réponses annotées d'un seul locuteur — et le rapport l'écrit sur chaque page.",
+{
+      fr: "Unscripted : 89 % de justesse en laissant une session de côté, sur 20 réponses annotées d'un seul locuteur — et le rapport l'écrit sur chaque page.",
+      en: "Unscripted: 89 % accuracy under leave-one-session-out, on 20 annotated answers from a single speaker — and the report says so on every page.",
+    },
   },
 ];
 
-const Process = () => (
+const Process = () => {
+  const t = useT();
+
+  return (
   <section id="process" className="process-section">
-    <h2 className="section-title">Méthode</h2>
+    <h2 className="section-title">{t({ fr: "Méthode", en: "Method" })}</h2>
     <p className="process-chapeau">
-      Les vingt-et-un projets ci-dessous ne sont pas vingt-et-une idées. C'est
-      la même quatre fois par projet.
+      {t({
+        fr: "Les vingt-deux projets de cette page ne sont pas vingt-deux idées. C'est la même, quatre fois par projet.",
+        en: "The twenty-two projects on this page are not twenty-two ideas. They are the same one, four times per project.",
+      })}
     </p>
 
     <ol className="process-etapes">
@@ -55,14 +85,15 @@ const Process = () => (
         <li key={e.rang}>
           <span className="process-rang">{e.rang}</span>
           <div className="process-corps">
-            <h3>{e.titre}</h3>
-            <p>{e.corps}</p>
-            <p className="process-preuve">{e.preuve}</p>
+            <h3>{t(e.titre)}</h3>
+            <p>{t(e.corps)}</p>
+            <p className="process-preuve">{t(e.preuve)}</p>
           </div>
         </li>
       ))}
     </ol>
   </section>
-);
+  );
+};
 
 export default Process;

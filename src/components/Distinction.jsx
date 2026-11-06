@@ -1,4 +1,5 @@
 import React from "react";
+import { useT } from "../context/lang";
 
 // La planche KeeperHub porte le même navy et le même vert que ce site :
 // #111828 contre #0f172a, carte #1b2232 contre #1e293b, vert #07ff62 contre
@@ -16,28 +17,32 @@ import React from "react";
 const IMG = "/my_portfolio_website/images/";
 
 const Distinction = () => {
+  const t = useT();
   const [planche, setPlanche] = React.useState(false);
 
   return (
     <section id="distinction" className="distinction-section">
-      <h2 className="section-title">Distinction</h2>
+      <h2 className="section-title">
+        {t({ fr: "Distinction", en: "Distinction" })}
+      </h2>
 
       <div className="distinction-bloc">
         <div className="distinction-texte">
           <p className="distinction-quoi">
-            Finaliste — <strong>KeeperHub Agent Economy Hackathon 2026</strong>,
-            main track
+            {t({ fr: "Finaliste", en: "Finalist" })} —{" "}
+            <strong>KeeperHub Agent Economy Hackathon 2026</strong>, main track
           </p>
           <p className="distinction-detail">
-            Dix finalistes retenus sur l&apos;ensemble des soumissions du main
-            track. Le projet retenu est <strong>Runway</strong> : un keeper qui
-            décide qui continue d&apos;être payé quand une trésorerie Superfluid
-            s&apos;épuise, et qui exécute sa décision sous un mandat
-            qu&apos;il ne peut pas dépasser — jamais le droit de créer un flux.
+            {t({
+              fr: "Dix finalistes retenus sur l'ensemble des soumissions du main track. Le projet retenu est Runway : un keeper qui décide qui continue d'être payé quand une trésorerie Superfluid s'épuise, et qui exécute sa décision sous un mandat qu'il ne peut pas dépasser — jamais le droit de créer un flux.",
+              en: "Ten finalists selected across all main-track submissions. The project is Runway: a keeper that decides who keeps being paid when a Superfluid treasury runs dry, and executes that decision under a mandate it cannot exceed — never the right to open a stream.",
+            })}
           </p>
           <p className="distinction-detail">
-            Deux correctifs ont par ailleurs été acceptés en amont chez
-            KeeperHub avant la soumission.
+            {t({
+              fr: "Deux correctifs ont par ailleurs été acceptés en amont chez KeeperHub avant la soumission.",
+              en: "Two patches were also merged upstream at KeeperHub before the submission.",
+            })}
           </p>
           <a
             className="btn btn-secondary"
@@ -45,7 +50,7 @@ const Distinction = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Le dépôt Runway
+            {t({ fr: "Le dépôt Runway", en: "The Runway repository" })}
           </a>
         </div>
 
@@ -58,12 +63,16 @@ const Distinction = () => {
             width="570"
             height="136"
             loading="lazy"
-            alt="Ligne 05 de l'annonce KeeperHub : Runway, @Yoh5."
+            alt={t({
+              fr: "Ligne 05 de l'annonce KeeperHub : Runway, @Yoh5.",
+              en: "Row 05 of the KeeperHub announcement: Runway, @Yoh5.",
+            })}
           />
           <figcaption>
-            KeeperHub — <em>Agent Economy Hackathon</em>, main track, annonce
-            des dix finalistes, 23 septembre 2026. Extrait de la planche
-            publiée par l&apos;organisateur.
+            {t({
+              fr: "KeeperHub — Agent Economy Hackathon, main track, annonce des dix finalistes, 23 septembre 2026. Extrait de la planche publiée par l'organisateur.",
+              en: "KeeperHub — Agent Economy Hackathon, main track, announcement of the ten finalists, 23 September 2026. Detail from the board published by the organiser.",
+            })}
           </figcaption>
 
           <button
@@ -73,7 +82,9 @@ const Distinction = () => {
             aria-controls="keeperhub-planche"
             onClick={() => setPlanche((v) => !v)}
           >
-            {planche ? "Replier la planche" : "Voir la planche entière"}
+            {planche
+              ? t({ fr: "Replier la planche", en: "Collapse the board" })
+              : t({ fr: "Voir la planche entière", en: "See the full board" })}
           </button>
 
           <img
@@ -84,7 +95,10 @@ const Distinction = () => {
             width="1280"
             height="720"
             loading="lazy"
-            alt="Planche KeeperHub annonçant les dix finalistes du main track ; Runway, de @Yoh5, y figure en cinquième position."
+            alt={t({
+              fr: "Planche KeeperHub annonçant les dix finalistes du main track ; Runway, de @Yoh5, y figure en cinquième position.",
+              en: "KeeperHub board announcing the ten main-track finalists; Runway, by @Yoh5, appears in fifth position.",
+            })}
           />
         </figure>
       </div>

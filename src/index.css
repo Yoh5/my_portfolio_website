@@ -2617,3 +2617,143 @@ section[id] {
     padding: 1.5rem 1.4rem;
   }
 }
+
+/* --- Bascules langue + thème -------------------------------------------- */
+
+/* Les deux boutons sont rangés dans un <li> : ils vivaient jusqu'ici en
+   enfants directs du <ul>, ce qui est invalide et laissait leur espacement à
+   la merci des règles du menu. */
+.nav-bascules {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 6px;
+  list-style: none;
+}
+
+/* Même gabarit que le bouton de thème, pour que la paire se lise comme une
+   paire : hauteur, rayon et bordure identiques, seule la largeur change. */
+.lang-toggle {
+  min-width: 48px;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Le bouton de thème portait un emoji, dont le dessin change selon le système
+   et qu'un lecteur d'écran annonce par son nom Unicode. C'est une icône
+   maintenant, et elle doit garder la taille que l'emoji occupait. */
+.theme-toggle i {
+  font-size: 17px;
+  line-height: 1;
+  width: 1em;
+  text-align: center;
+}
+
+/* --- Formulaire de contact : libellés visibles et icônes --------------- */
+
+/* Les champs n'avaient que des placeholders. Un placeholder disparaît dès la
+   première frappe : l'utilisateur qui relit son formulaire ne sait plus quel
+   champ est lequel, et un lecteur d'écran ne l'annonce pas de façon fiable. */
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-etat {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: var(--accent-sourd);
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Les coordonnées portaient des emoji. Largeur fixe pour que les quatre
+   lignes s'alignent, quelle que soit la largeur du glyphe. */
+.contact-item i {
+  width: 1.15em;
+  font-size: 1.05rem;
+  text-align: center;
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover i {
+  color: inherit;
+}
+
+/* --- Collages de boutons ------------------------------------------------
+   `.project-plus` est un <button>, donc en ligne, et le lien `.btn` qui le
+   suit se posait sur la même ligne : quand le bloc de détail entre les deux
+   est masqué, plus rien ne les sépare et ils se chevauchaient. Mettre la
+   carte en colonne règle la famille entière au lieu de ce seul cas, et
+   `align-items: flex-start` empêche les enfants de s'étirer sur toute la
+   largeur — un bouton pleine largeur n'est pas plus lisible, il est plus
+   difficile à viser. */
+.recherche-carte {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.recherche-carte > * {
+  max-width: 100%;
+}
+
+/* Les deux boutons d'une carte projet, même traitement. */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Et non pas tous les enfants en 100 % : `.project-plus` porte un
+   soulignement, qui traversait alors toute la carte. Seuls les blocs qui
+   doivent occuper la largeur la prennent. */
+.project-content p,
+.project-content h3,
+.project-content .tech-stack,
+.project-content .project-buttons {
+  width: 100%;
+}
+
+/* Un groupe de boutons ne doit jamais coller : l'espace est posé par le
+   conteneur, pas par les marges de chaque bouton, qui s'annulent dès qu'un
+   voisin est masqué. */
+.project-buttons,
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Les étiquettes de technologies se touchaient quand une ligne débordait :
+   `gap` s'applique aussi entre les lignes, une marge droite seule non. */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
