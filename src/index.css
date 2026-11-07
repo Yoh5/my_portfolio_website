@@ -19,6 +19,7 @@
   --bg-barre: rgba(15, 23, 42, 0.9);
   --border: #1e293b;
   --shadow: rgba(0, 0, 0, 0.3);
+  --plaque-logo: #f5f5f4;
 }
 
 /* Thème clair sur papier plutôt que sur blanc. Le quasi-blanc #f8fafc était
@@ -36,9 +37,9 @@
    fond crème se voit, et pas en bien. Mesures complètes au moment de la
    pose ; les dix paires qui comptent passent. */
 [data-theme="light"] {
-  --bg-primary: #f7f4ed;
-  --bg-secondary: #fffdf8;
-  --bg-card: #efe9dd;
+  --bg-primary: #f2ece1;
+  --bg-secondary: #e9e1d3;
+  --bg-card: #fbf8f2;
   --text-primary: #1c1917;
   --text-secondary: #44403c;
   --text-muted: #6b6560;
@@ -46,8 +47,9 @@
   --accent-hover: #14532d;
   --accent-sourd: rgba(22, 101, 52, 0.10);
   --bg-barre: rgba(247, 244, 237, 0.92);
-  --border: #d2c7b2;
+  --border: #d0c3aa;
   --shadow: rgba(60, 50, 35, 0.10);
+  --plaque-logo: #fdfbf7;
 }
 
 /* Reset et base */
@@ -620,7 +622,11 @@ body {
   height: 50px;
   object-fit: contain;
   border-radius: 10px;
-  background: white;
+  /* Une plaque pour poser un logo de marque, pas un blanc de defaut : en
+     theme clair elle suit le papier, sinon elle perce un trou dans le beige.
+     Elle reste tres claire dans les deux themes parce qu'un logo d'entreprise
+     est dessine pour du clair. */
+  background: var(--plaque-logo);
   padding: 5px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }

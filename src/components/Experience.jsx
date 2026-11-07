@@ -76,7 +76,7 @@ const Experience = () => {
             <div 
               className="company-logo-timeline"
               style={{ 
-                background: exp.logo ? 'white' : exp.companyColor,
+                background: exp.logo ? 'var(--plaque-logo)' : exp.companyColor,
                 borderColor: exp.companyColor 
               }}
             >
